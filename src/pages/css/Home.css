@@ -1,0 +1,133 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: zain;
+  text-decoration: none;
+  list-style: none;
+}
+
+:root{
+  --main--color: #071952;
+  --second--color: #3FD357;
+  --darkSecond--color: #27bd40;
+  --darkMain--color:#00134E;
+  --white--color:#FFFFFF;
+}
+body{
+  background-color: var(--main--color);
+}
+
+/* Start Home Section */
+.home {
+  min-height: calc(100vh - 90px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(#07195200,#07195262) ,url('/public/assets/Photos/LandBG.png') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  text-align: center;
+  color: var(--white--color);
+}
+
+.home-container {
+  max-width: 600px;
+}
+
+.welcome-text {
+  font-size: 20px;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+.name {
+  font-size: 150px;
+  font-weight: 900;
+  margin: -70px 0;
+  color: var(--second--color);
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+.fire-btn {
+  background: var(--second--color);
+  color: var(--white--color);
+  padding: 10px 20px;
+  border: none;
+  font-size: 20px;
+  font-weight: 800;
+  cursor: pointer;
+  margin-right: 15px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.fire-btn:hover {
+  background:var(--darkSecond--color);
+}
+
+.download-cv {
+  color: var(--white--color);
+  font-size: 20px;
+  opacity: 0.8;
+  font-weight: 700;
+  transition: 0.3s;
+
+}
+
+.download-cv:hover {
+  opacity: 1;
+}
+
+.social-icons {
+  margin-top: 30px;
+}
+
+.social-icons img {
+  color: var(--white--color);
+  font-size: 20px;
+  margin: 0 7px;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.social-icons img:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.bottom-icon {
+  position: absolute;
+  left: 50%;
+  transform:translateX(-50%) ;
+  bottom: 50px;
+  animation: scrollDown 1s ease-in-out infinite;
+
+}
+.bottom-icon img {
+  width: 20px;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+.bottom-icon:hover img {
+  opacity: 1;
+}
+
+@keyframes scrollDown {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+
+
+/* End Home Section */
