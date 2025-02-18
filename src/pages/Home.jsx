@@ -93,7 +93,7 @@ function Home() {
     src="https://cdn.lordicon.com/bzxxzycl.json"
     trigger="hover"
             colors="primary:#ffffff,secondary:#3fd357"
-            style={{ width: "200px", height: "200px" }}>
+            style={{ width: "150px", height: "150px" }}>
         </lord-icon>
             <h2 className="service-title">Web Development</h2>
             <p className="service-text">
@@ -106,7 +106,7 @@ function Home() {
             src="https://cdn.lordicon.com/ovxlloho.json"
             trigger="hover"
             colors="primary:#ffffff,secondary:#3fd357"
-            style={{ width: "200px", height: "200px" }}>
+            style={{ width: "150px", height: "150px" }}>
         </lord-icon>
             <h2 className="service-title">Web Development</h2>
             <p className="service-text">
@@ -119,7 +119,7 @@ function Home() {
             src="https://cdn.lordicon.com/ewtvnblg.json"
             trigger="hover"
             colors="primary:#ffffff,secondary:#3fd357"
-            style={{ width: "200px", height: "200px" }}>
+            style={{ width: "150px", height: "150px" }}>
         </lord-icon>
             <h2 className="service-title">Web Development</h2>
             <p className="service-text">
@@ -132,7 +132,7 @@ function Home() {
             src="https://cdn.lordicon.com/qfwgmyhc.json"
             trigger="hover"
             colors="primary:#ffffff,secondary:#3fd357"
-            style={{ width: "200px", height: "200px" }}>
+            style={{ width: "150px", height: "150px" }}>
         </lord-icon>
             <h2 className="service-title">Web Development</h2>
             <p className="service-text">
@@ -145,7 +145,7 @@ function Home() {
     src="https://cdn.lordicon.com/weynygnn.json"
             trigger="hover"
             colors="primary:#ffffff,secondary:#3fd357"
-            style={{ width: "200px", height: "200px" }}>
+            style={{ width: "150px", height: "150px" }}>
         </lord-icon>
             <h2 className="service-title">Web Development</h2>
             <p className="service-text">
@@ -158,7 +158,7 @@ function Home() {
    src="https://cdn.lordicon.com/wbthjkyu.json"
             trigger="hover"
             colors="primary:#ffffff,secondary:#3fd357"
-            style={{ width: "200px", height: "200px" }}>
+            style={{ width: "150px", height: "150px" }}>
         </lord-icon>
             <h2 className="service-title">Web Development</h2>
             <p className="service-text">
@@ -167,6 +167,15 @@ function Home() {
             </p>
           </div>
         </div>
+      </section>
+
+      <section className="Gallery-section">
+      <h1 className="Title">Gallery</h1>
+      <div className="PRJS Web">
+        <div className="PJ">
+          <img src="/assets/Photos/LandBG.png" alt="" />
+        </div>
+      </div>
       </section>
 
 

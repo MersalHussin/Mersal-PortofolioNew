@@ -259,6 +259,7 @@ section {
 .Services-section .services  .service:hover{
   box-shadow: var(--second--color) 7px 7px 0px 1px;
   border: 2px solid var(--second--color);
+  background-color: var(--darkMain--color);
 
 }
 .Services-section .services  .service h2{
