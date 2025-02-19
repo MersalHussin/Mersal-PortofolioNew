@@ -16,11 +16,21 @@
 }
 body{
   background-color: var(--main--color);
-}
+  background-color: #071952;
+  background-color: #071952;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 120 120'%3E%3Cpolygon fill='%23000D35' fill-opacity='0.1' points='120 0 120 60 90 30 60 0 0 0 0 0 60 60 0 120 60 120 90 90 120 60 120 0'/%3E%3C/svg%3E");}
 
 /* Start Components */
 section {
   padding: 100px 0;
+}
+
+.see-m-BTN{
+  background-color: var(--second--color);
+  color: var(--main--color);
+  padding: 15px 30px;
+  border-radius: 5px;
+  margin-top: 20px;
 }
 /* End Components */
 
@@ -189,6 +199,7 @@ section {
   top: 100px;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: -1;
 
 }
 
@@ -221,15 +232,21 @@ section {
 }
 
 .skill-icon {
-  width: 90px;
+  width: 80px;
   height: auto;
-  margin: 0 30px;
+  margin: 10px 20px;;
   filter: grayscale(1);
   transition: 0.3s;
 }
 
 .skill-icon:hover {
   filter: grayscale(0);
+}
+
+@media(  1440px <= width){
+  .skill-icon {
+    width: 110px;
+  }
 }
 
 /* End skills */
@@ -257,7 +274,7 @@ section {
   transition: 0.3s;
 }
 .Services-section .services  .service:hover{
-  box-shadow: var(--second--color) 7px 7px 0px 1px;
+  box-shadow: var(--second--color) -7px -7px 0px 1px;
   border: 2px solid var(--second--color);
   background-color: var(--darkMain--color);
 
@@ -272,3 +289,75 @@ color: var(--white--color);
 }
 
 /* End Services Section */
+
+/* Start Gallery Section */
+.gallery-section .PJS{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1280px;
+  margin: 100px auto;
+  padding: 20px;
+  gap: 15px;
+  position: relative;
+}
+.gallery-section .PJS .PJ{
+width: 400px;
+height: 400px;
+background: var(--main--color);
+border-radius: 10px;
+text-align: center;
+transition: 0.3s;
+border: 2px solid var(--darkMain--color);
+box-shadow: var(--darkMain--color) -7px -7px 0px 1px;
+transition: 0.3s;
+overflow: hidden;
+cursor: pointer;
+position: relative;
+}
+.gallery-section .PJS .PJ .data{
+  background:linear-gradient(#07195200 , var(--main--color) 80%); ;
+  width: 100%;
+  padding:40px 20px 10px 20px;
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+  z-index: 1;
+  transition: 0.3s;
+  color: var(--second--color);
+}
+
+
+.gallery-section .PJS .PJ:hover{
+border: 2px solid var(--second--color);
+box-shadow: var(--second--color) 7px 7px 0px 1px;
+}
+.gallery-section .PJS .PJ:hover .data{
+opacity: 1;
+}
+.gallery-section .PJS .PJ img{
+max-width: 100%;
+max-height:100% ;
+border-radius: 10px;
+transition: 0.3s;
+}
+.gallery-section .PJS .PJ:hover img{
+filter: blur(1px);
+transform: scale(1.1);
+opacity: 0.8;
+}
+
+
+.sub.Title{
+  font-size: 40px;
+  margin-bottom: 20px;
+  text-align: left;
+  position: absolute;
+  top: -70px;
+}
+.sub.Title::after{
+  content: "";
+}
+
+/* End Gallery Section */

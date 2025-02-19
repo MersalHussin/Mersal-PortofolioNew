@@ -1,5 +1,6 @@
 import Marquee from "react-fast-marquee";
 import "./css/Home.css";
+import ServiceList from "../components/ServiceList";
 
 function Home() {
   return (
@@ -76,7 +77,7 @@ function Home() {
           <img src="/assets/Photos/apps/Canva.png" alt="Canva" className="skill-icon" />
           <img src="/assets/Photos/apps/miro.png" alt="JavaScript" className="skill-icon" />
           <img src="/assets/Photos/apps/xd.png" alt="Adobe XD" className="skill-icon" />
-          <img src="/assets/Photos/apps/figma.png" alt="Figma" className="skill-icon" />
+          <img src="/assets/Photos/apps/figma.png" style={{width:"60px"}} alt="Figma" className="skill-icon" />
           <img src="/assets/Photos/apps/html.png" alt="HTML" className="skill-icon" />
           <img src="/assets/Photos/apps/css.png" alt="CSS" className="skill-icon" />
           <img src="/assets/Photos/apps/js.png" alt="JavaScript" className="skill-icon" />
@@ -87,94 +88,62 @@ function Home() {
 
       <section className="Services-section"> 
         <h1 className="Title">Services</h1>
-        <div className="services">
-          <div className="service">
-        <lord-icon
-    src="https://cdn.lordicon.com/bzxxzycl.json"
-    trigger="hover"
-            colors="primary:#ffffff,secondary:#3fd357"
-            style={{ width: "150px", height: "150px" }}>
-        </lord-icon>
-            <h2 className="service-title">Web Development</h2>
-            <p className="service-text">
-              I can create websites, design YouTube thumbnails, logos, and craft
-              social media posts professionally 
-            </p>
-          </div>
-          <div className="service">
-        <lord-icon
-            src="https://cdn.lordicon.com/ovxlloho.json"
-            trigger="hover"
-            colors="primary:#ffffff,secondary:#3fd357"
-            style={{ width: "150px", height: "150px" }}>
-        </lord-icon>
-            <h2 className="service-title">Web Development</h2>
-            <p className="service-text">
-              I can create websites, design YouTube thumbnails, logos, and craft
-              social media posts professionally 
-            </p>
-          </div>
-          <div className="service">
-        <lord-icon
-            src="https://cdn.lordicon.com/ewtvnblg.json"
-            trigger="hover"
-            colors="primary:#ffffff,secondary:#3fd357"
-            style={{ width: "150px", height: "150px" }}>
-        </lord-icon>
-            <h2 className="service-title">Web Development</h2>
-            <p className="service-text">
-              I can create websites, design YouTube thumbnails, logos, and craft
-              social media posts professionally 
-            </p>
-          </div>
-          <div className="service">
-        <lord-icon
-            src="https://cdn.lordicon.com/qfwgmyhc.json"
-            trigger="hover"
-            colors="primary:#ffffff,secondary:#3fd357"
-            style={{ width: "150px", height: "150px" }}>
-        </lord-icon>
-            <h2 className="service-title">Web Development</h2>
-            <p className="service-text">
-              I can create websites, design YouTube thumbnails, logos, and craft
-              social media posts professionally 
-            </p>
-          </div>
-          <div className="service">
-        <lord-icon
-    src="https://cdn.lordicon.com/weynygnn.json"
-            trigger="hover"
-            colors="primary:#ffffff,secondary:#3fd357"
-            style={{ width: "150px", height: "150px" }}>
-        </lord-icon>
-            <h2 className="service-title">Web Development</h2>
-            <p className="service-text">
-              I can create websites, design YouTube thumbnails, logos, and craft
-              social media posts professionally 
-            </p>
-          </div>
-          <div className="service">
-        <lord-icon
-   src="https://cdn.lordicon.com/wbthjkyu.json"
-            trigger="hover"
-            colors="primary:#ffffff,secondary:#3fd357"
-            style={{ width: "150px", height: "150px" }}>
-        </lord-icon>
-            <h2 className="service-title">Web Development</h2>
-            <p className="service-text">
-              I can create websites, design YouTube thumbnails, logos, and craft
-              social media posts professionally 
-            </p>
-          </div>
-        </div>
+        <ServiceList/>
       </section>
 
-      <section className="Gallery-section">
+      <section className="gallery-section">
       <h1 className="Title">Gallery</h1>
-      <div className="PRJS Web">
+      <div className="PJS Web">
+      <h3 className="sub Title">Graphic Design</h3>
         <div className="PJ">
-          <img src="/assets/Photos/LandBG.png" alt="" />
+          <img src="/assets/Photos/Gallery/Graphic-Design/1.jpg" alt="" />
         </div>
+        <div className="PJ">
+        <div className="data">
+          <h3>Dr.Mohamed Identity</h3>
+          <p>Graphic Design</p>
+        </div>
+        <img src="/assets/Photos/Gallery/Graphic-Design/2.jpg" alt="" />
+        </div>
+        <div className="PJ">
+        <img src="/assets/Photos/Gallery/Graphic-Design/3.jpg" alt="" />
+        </div>
+        <div className="PJ">
+        <img src="/assets/Photos/Gallery/Graphic-Design/4.jpg" alt="" />
+        </div>
+        <div className="PJ">
+        <img src="/assets/Photos/Gallery/Graphic-Design/5.jpg" alt="" />
+        </div>
+        <div className="PJ">
+        <img src="/assets/Photos/Gallery/Graphic-Design/6.jpg" alt="" />
+        </div>
+        <a href="#" className="see-m-BTN">
+          See More <i class="fa-brands fa-behance"></i>
+        </a>
+      </div>
+      <div className="PJS Web">
+      <h3 className="sub Title">Web Development</h3>
+        <div className="PJ">
+          <img src="/assets/Photos/Gallery/Web/7.jpg" alt="" />
+        </div>
+        <div className="PJ">
+        <img src="/assets/Photos/Gallery/Web/8.jpg" alt="" />
+        </div>
+        <div className="PJ">
+        <img src="/assets/Photos/Gallery/Web/9.jpg" alt="" />
+        </div>
+        <div className="PJ">
+        <img src="/assets/Photos/Gallery/Web/10.jpg" alt="" />
+        </div>
+        <div className="PJ">
+        <img src="/assets/Photos/Gallery/Web/11.jpg" alt="" />
+        </div>
+        <div className="PJ">
+        <img src="/assets/Photos/Gallery/Web/12.jpg" alt="" />
+        </div>
+        <a href="#" className="see-m-BTN">
+          See More <i class="fa-brands fa-github"></i>
+        </a>
       </div>
       </section>
 
