@@ -1,6 +1,7 @@
 import Marquee from "react-fast-marquee";
 import "./css/Home.css";
 import ServiceList from "../components/ServiceList";
+import GallerySection from "../components/GallerySection";
 
 function Home() {
   return (
@@ -92,59 +93,7 @@ function Home() {
       </section>
 
       <section className="gallery-section">
-      <h1 className="Title">Gallery</h1>
-      <div className="PJS Web">
-      <h3 className="sub Title">Graphic Design</h3>
-        <div className="PJ">
-          <img src="/assets/Photos/Gallery/Graphic-Design/1.jpg" alt="" />
-        </div>
-        <div className="PJ">
-        <div className="data">
-          <h3>Dr.Mohamed Identity</h3>
-          <p>Graphic Design</p>
-        </div>
-        <img src="/assets/Photos/Gallery/Graphic-Design/2.jpg" alt="" />
-        </div>
-        <div className="PJ">
-        <img src="/assets/Photos/Gallery/Graphic-Design/3.jpg" alt="" />
-        </div>
-        <div className="PJ">
-        <img src="/assets/Photos/Gallery/Graphic-Design/4.jpg" alt="" />
-        </div>
-        <div className="PJ">
-        <img src="/assets/Photos/Gallery/Graphic-Design/5.jpg" alt="" />
-        </div>
-        <div className="PJ">
-        <img src="/assets/Photos/Gallery/Graphic-Design/6.jpg" alt="" />
-        </div>
-        <a href="#" className="see-m-BTN">
-          See More <i class="fa-brands fa-behance"></i>
-        </a>
-      </div>
-      <div className="PJS Web">
-      <h3 className="sub Title">Web Development</h3>
-        <div className="PJ">
-          <img src="/assets/Photos/Gallery/Web/7.jpg" alt="" />
-        </div>
-        <div className="PJ">
-        <img src="/assets/Photos/Gallery/Web/8.jpg" alt="" />
-        </div>
-        <div className="PJ">
-        <img src="/assets/Photos/Gallery/Web/9.jpg" alt="" />
-        </div>
-        <div className="PJ">
-        <img src="/assets/Photos/Gallery/Web/10.jpg" alt="" />
-        </div>
-        <div className="PJ">
-        <img src="/assets/Photos/Gallery/Web/11.jpg" alt="" />
-        </div>
-        <div className="PJ">
-        <img src="/assets/Photos/Gallery/Web/12.jpg" alt="" />
-        </div>
-        <a href="#" className="see-m-BTN">
-          See More <i class="fa-brands fa-github"></i>
-        </a>
-      </div>
+      <GallerySection />
       </section>
 
 

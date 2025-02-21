@@ -14,10 +14,13 @@
   --darkMain--color:#00134E;
   --white--color:#FFFFFF;
 }
+
+::selection{
+  background-color: var(--second--color);
+  color: var(--main--color);
+}
 body{
   background-color: var(--main--color);
-  background-color: #071952;
-  background-color: #071952;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 120 120'%3E%3Cpolygon fill='%23000D35' fill-opacity='0.1' points='120 0 120 60 90 30 60 0 0 0 0 0 60 60 0 120 60 120 90 90 120 60 120 0'/%3E%3C/svg%3E");}
 
 /* Start Components */
@@ -147,7 +150,6 @@ section {
 
 /* Start About Section */
 .about {
-  background: var(--main--color);
   padding: 60px 20px;
   display: flex;
   justify-content: center;
@@ -298,13 +300,13 @@ color: var(--white--color);
   flex-wrap: wrap;
   max-width: 1280px;
   margin: 100px auto;
-  padding: 20px;
+  padding: 30px;
   gap: 15px;
   position: relative;
 }
 .gallery-section .PJS .PJ{
-width: 400px;
-height: 400px;
+width: 380px;
+height: 380px;
 background: var(--main--color);
 border-radius: 10px;
 text-align: center;
@@ -317,7 +319,7 @@ cursor: pointer;
 position: relative;
 }
 .gallery-section .PJS .PJ .data{
-  background:linear-gradient(#07195200 , var(--main--color) 80%); ;
+  background:linear-gradient(#07195200,#071952d8  , var(--main--color) 80%); ;
   width: 100%;
   padding:40px 20px 10px 20px;
   position: absolute;
@@ -326,6 +328,33 @@ position: relative;
   z-index: 1;
   transition: 0.3s;
   color: var(--second--color);
+}
+.gallery-section .PJS .PJ .data .view{
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  flex-direction: column;
+}
+.gallery-section .PJS .PJ .data .view h6{
+  font-size: 20px ;
+  font-weight: 600;
+}
+
+.gallery-section .PJS .PJ .data h3{
+  font-size: 30px;
+  font-weight: 900;
+}
+.gallery-section .PJS .PJ .data p{
+  font-size: 20px;
+  font-weight: 600;
+  margin:  -10px ;
+  padding-bottom: 20px;
 }
 
 
@@ -345,7 +374,7 @@ transition: 0.3s;
 .gallery-section .PJS .PJ:hover img{
 filter: blur(1px);
 transform: scale(1.1);
-opacity: 0.8;
+opacity: 0.3;
 }
 
 
@@ -354,7 +383,26 @@ opacity: 0.8;
   margin-bottom: 20px;
   text-align: left;
   position: absolute;
-  top: -70px;
+  top: -80px;
+  background: var(--second--color);
+  color: var(--main--color);
+  padding: 4px 30px;
+  border-radius: 5px 5px 30px 30px;
+  width: 600px;
+  text-align: center;
+  transition: 0.3s;
+  box-shadow: 5px 5px 0 var(--darkMain--color);
+  border: 2px solid var(--darkMain--color);
+
+}
+.sub.Title:hover{
+  background-color: var(--darkMain--color);
+  transform: scale(1.05);
+  border-radius:  30px 30px 5px 5px;
+  color: var(--second--color);
+  box-shadow: 5px 5px 0 var(--second--color);
+  border: 2px solid var(--second--color);
+
 }
 .sub.Title::after{
   content: "";

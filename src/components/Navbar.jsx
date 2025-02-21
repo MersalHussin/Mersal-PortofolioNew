@@ -61,8 +61,9 @@ const Navbar = () => {
           className="contact-us"
           href="tel:+201040031584"
           onClick={() => handleLinkClick("#contact")}
+          style={{color:"#071952"}}
         >
-          تواصل معنا <i className="fa-solid fa-phone-volume"></i>
+        Contact Me <i className="fa-solid fa-phone-volume"></i>
         </a>
       </header>
     </>
