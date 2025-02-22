@@ -2,6 +2,8 @@ import Marquee from "react-fast-marquee";
 import "./css/Home.css";
 import ServiceList from "../components/ServiceList";
 import GallerySection from "../components/GallerySection";
+import Statistics from "../components/Statistics";
+import Testimonials from "../components/Testimonials";
 
 function Home() {
   return (
@@ -96,7 +98,14 @@ function Home() {
       <GallerySection />
       </section>
 
-
+      <section className="gallery-section">
+      <Statistics />
+      </section>
+      <section className="gallery-section">
+      <h1 className="Title">Testimonials</h1>
+      <Testimonials />
+      </section>
+                  
     </>
   );
 }

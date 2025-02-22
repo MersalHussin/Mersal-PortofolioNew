@@ -301,7 +301,7 @@ color: var(--white--color);
   max-width: 1280px;
   margin: 100px auto;
   padding: 30px;
-  gap: 15px;
+  gap: 20px;
   position: relative;
 }
 .gallery-section .PJS .PJ{
@@ -409,3 +409,149 @@ opacity: 0.3;
 }
 
 /* End Gallery Section */
+
+
+/* Start Statisics Section */
+.statistics-section {
+  background-color: var(--darkMain--color);
+  padding: 40px 0;
+  text-align: center;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.stats-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 80px;
+}
+
+.stat-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  width: 200px;
+}
+.stat-icon {
+  width: 80px;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+.stat-box:hover .stat-icon  {
+transform: scale(1.1);
+}
+
+
+.stat-number {
+  font-size: 50px;
+  font-weight: 900;
+  color: white;
+}
+
+.stat-label {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--second--color);
+  margin-top: -20px;
+}
+
+/* End Statisics Section */
+
+/* Start Testmonials Section */
+
+.testimonial-container {
+  max-width: 1600px;
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: auto;
+  direction: rtl;
+}
+
+.testimonial-card {
+  padding: 20px;
+  background: var(--main--color);
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  box-shadow: 10px 10px 0px var(--darkMain--color);
+  transition: 0.3s;
+  border: 3px solid var(--darkMain--color);
+  width: 500px;
+  margin: 10px;
+  flex-wrap: wrap;
+}
+
+.testimonial-card:hover{
+  box-shadow: 5px 5px 0px var(--second--color);
+  border-color: var(--second--color);
+}
+.testimonial-card::after {
+  content: '\f10e';
+  position: absolute;
+  top: -40px;
+  right: -20px;
+  font-size: 60px;
+  color: var(--second--color);
+  font-weight: 900;
+  transition: 0.3s;
+  font-family: 'Font Awesome 5 Free';
+}
+.testimonial-card:hover::after{
+  color: var(--white--color);
+  transform: scale(1.1);
+}
+
+.testimonial-text {
+  font-size: 25px;
+  line-height: 1.6;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.testimonial-footer {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  direction: ltr;
+}
+
+.testimonial-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2px solid var(--second--color);
+  margin-right: 10px;
+  background-color: white;
+}
+
+.testimonial-name {
+  color: var(--second--color);
+  font-weight: 900;
+  font-size: 20px;
+  text-align: left;
+
+}
+
+.testimonial-position {
+  font-size: 16px;
+  text-align: left;
+  margin-top: -10px;
+}
+
+
+/* End Testmonials Section */
