@@ -68,24 +68,40 @@ section {
 }
 
 .buttons {
-  margin-top: 20px;
+  margin-top: 10px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    right: 10px;
+    direction: auto;
 }
 
 .fire-btn {
-  background: var(--second--color);
-  color: var(--white--color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 200px;
+  margin: auto;
+  background-color: var(--white--color);
+  border: 2px solid var(--second--color) !important;
+  color: var(--main--color);
+  box-shadow: 5px 5px 0 var(--second--color);
   padding: 10px 20px;
   border: none;
   font-size: 20px;
   font-weight: 800;
   cursor: pointer;
-  margin-right: 15px;
+  margin: 20px;
   border-radius: 5px;
   transition: 0.3s;
 }
 
 .fire-btn:hover {
-  background:var(--darkSecond--color);
+  background:var(--white--color);
+  box-shadow: -5px 5px 0 var(--second--color);
+
 }
 
 .download-cv {
@@ -101,13 +117,20 @@ section {
   opacity: 1;
 }
 
+.home .social-icons {
+    position: relative;
+    top: 10px;
+}
 .social-icons {
-  margin-top: 30px;
+    position: relative;
 }
 
+.home .social-icons img {
+width: 20px;
+margin:5px ;
+}
 .social-icons img {
   color: var(--white--color);
-  font-size: 20px;
   margin: 0 7px;
   opacity: 0.8;
   transition: 0.3s;
@@ -185,7 +208,7 @@ section {
   text-align: left;
 }
 
-.Title {
+.Title{
   font-size: 80px;
   font-weight: 800;
   color: var(--second--color);
@@ -193,6 +216,7 @@ section {
   margin-bottom: 10px;
   position: relative;
 }
+/*  */
 .Title::after {
   content: url("/public/assets/Photos/Title-line.svg");
   width: 100%;
@@ -209,9 +233,17 @@ section {
   font-size: 20px;
   line-height: 1.6;
   opacity: 0.9;
+  text-align: start;
 }
 
-/* Responsive Design */
+.about-me-btns a{
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+    direction: auto !important;
+    color: var(--second--color) !important;
+  }
+    /* Responsive Design */
 @media (max-width: 768px) {
   .about-content {
     flex-direction: column;
@@ -301,18 +333,17 @@ color: var(--white--color);
   max-width: 1280px;
   margin: 100px auto;
   padding: 30px;
-  gap: 20px;
+  gap: 30px;
   position: relative;
 }
 .gallery-section .PJS .PJ{
 width: 380px;
-height: 380px;
 background: var(--main--color);
 border-radius: 10px;
 text-align: center;
 transition: 0.3s;
 border: 2px solid var(--darkMain--color);
-box-shadow: var(--darkMain--color) -7px -7px 0px 1px;
+box-shadow: var(--darkMain--color) -5px -5px 0px 1px;
 transition: 0.3s;
 overflow: hidden;
 cursor: pointer;
@@ -360,7 +391,7 @@ position: relative;
 
 .gallery-section .PJS .PJ:hover{
 border: 2px solid var(--second--color);
-box-shadow: var(--second--color) 7px 7px 0px 1px;
+box-shadow: var(--second--color) 5px 5px 0px 1px;
 }
 .gallery-section .PJS .PJ:hover .data{
 opacity: 1;
@@ -370,10 +401,11 @@ max-width: 100%;
 max-height:100% ;
 border-radius: 10px;
 transition: 0.3s;
+transform: scale(1.1);
 }
 .gallery-section .PJS .PJ:hover img{
 filter: blur(1px);
-transform: scale(1.1);
+transform: scale(1.2);
 opacity: 0.3;
 }
 
@@ -596,3 +628,94 @@ transform: scale(1.1);
 }
 
 /*End Certificates Section */
+
+/* Start CTA Section */
+.CTA-section{
+  background:linear-gradient(var(--second--color) , #3fd358e5 ), url('/public/assets/Photos/digital-design.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 100px 0;
+  text-align: center;
+  font-size: 40px;
+  color: var(--main--color);
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.CTA-section img{
+  width: 250px;
+  margin-bottom: -40px;
+}
+.CTA-section h1 {
+  font-weight: 900;
+  line-height: 1;
+}
+.CTA-section .fire-btn {
+  margin: auto;
+  width: 170px;
+  margin-top: 20px;
+  background-color: var(--white--color);
+  border: 3px solid var(--main--color) !important;
+  color: var(--main--color);
+  box-shadow: 5px 5px 0 var(--darkMain--color);
+}
+.CTA-section .fire-btn:hover {
+  background:linear-gradient(#ff9000,#ffd900) }
+/* END CTA Section */
+
+
+/* Strat Trusted By Section */
+.Trusted-by-section{
+  max-width: 1200px;
+  margin: auto;
+}
+.Trusted-by-section h1{
+  font-size: 40px;
+  color: var(--second--color);
+  margin: 20px;
+}
+.Trusted-by-section img{
+  width: 800px;
+  margin: auto;
+}
+/* Strat Trusted By Section */
+
+
+/* Start Footer  */
+footer {
+  background-color: var(--darkMain--color);
+  color: var(--white--color);
+  padding: 50px 0 20px 0 ;
+  text-align: center;
+  border-top: 3px solid var(--second--color);
+}
+footer p {
+  width: 500px;
+  padding: 10px 20px 0 0 ;
+  margin: auto;
+  font-size: 14px;
+}
+footer .email {
+  color: var(--white--color);
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0 0 0;
+  align-content: center;
+}
+footer .email lord-icon {
+margin-top: 5px;
+}
+footer .social-icons  {
+  margin: auto;
+  padding: 10px;
+  opacity: 1;
+}
+footer .social-icons img {
+  width: 30px;
+  opacity: 1;
+}
+/* EndFooter  */

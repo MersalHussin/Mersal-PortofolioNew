@@ -1,13 +1,16 @@
+import { useTranslation } from "react-i18next";
 import CountUp from "react-countup";
 
-const statsData = [
-  { icon: "/assets/photos/design.png", label: "Design", target: 600 },
-  { icon: "/assets/photos/website.png", label: "Website", target: 50 },
-  { icon: "/assets/photos/logo.png", label: "Logo", target: 45 },
-  { icon: "/assets/photos/video.png", label: "Video", target: 130 },
-];
-
 const Statistics = () => {
+  const { t } = useTranslation();
+
+  const statsData = [
+    { icon: "/assets/photos/design.png", label: t("statistics.design"), target: 600 },
+    { icon: "/assets/photos/website.png", label: t("statistics.website"), target: 50 },
+    { icon: "/assets/photos/logo.png", label: t("statistics.logo"), target: 45 },
+    { icon: "/assets/photos/video.png", label: t("statistics.video"), target: 130 },
+  ];
+
   return (
     <section className="statistics-section">
       <div className="container">

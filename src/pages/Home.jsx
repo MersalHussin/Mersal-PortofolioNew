@@ -1,3 +1,5 @@
+import React from "react";
+import { useTranslation } from "react-i18next";
 import Marquee from "react-fast-marquee";
 import "./css/Home.css";
 import ServiceList from "../components/ServiceList";
@@ -5,113 +7,91 @@ import GallerySection from "../components/GallerySection";
 import Statistics from "../components/Statistics";
 import Testimonials from "../components/Testimonials";
 import Certificates from "../components/Certificates";
+import Footer from "../components/Footer";
 
 function Home() {
+  const { t } = useTranslation();
+
   return (
     <>
       <section className="home">
         <div className="home-container">
-          <h2 className="welcome-text">Hello, Welcome at my portfolio</h2>
-          <h1 className="name">Mersal</h1>
+          <h2 className="welcome-text">{t("welcome")}</h2>
+          <h1 className="name">{t("mersal")}</h1>
           <div className="buttons">
-            <button className="fire-btn">Fire The World</button>
+            <a href="#" className="fire-btn">{t("fireTheWorld")}</a>
             <a href="/cv.pdf" className="download-cv">
-              Download CV
+              {t("downloadCV")}
             </a>
           </div>
           <div className="social-icons">
-            <a href="#">
-              <img src="/assets/Photos/Social/Facebook.svg" alt="Facebook" />
-            </a>
-            <a href="#">
-              <img src="/assets/Photos/Social/Linked-in.svg" alt="Linkedin" />
-            </a>
-            <a href="#">
-              <img src="/assets/Photos/Social/Github.svg" alt="Github" />
-            </a>
-            <a href="#">
-              <img src="/assets/Photos/Social/Behance.svg" alt="Behance" />
-            </a>
+            <a href="#"><img src="/assets/Photos/Social/Facebook.svg" alt="Facebook" /></a>
+            <a href="#"><img src="/assets/Photos/Social/Linked-in.svg" alt="Linkedin" /></a>
+            <a href="#"><img src="/assets/Photos/Social/Github.svg" alt="Github" /></a>
+            <a href="#"><img src="/assets/Photos/Social/Behance.svg" alt="Behance" /></a>
           </div>
           <div className="bottom-icon">
-            <a href="#about">
-              <img src="/assets/Photos/scroll-down.svg" alt="ScrollDown" />
-            </a>
+            <a href="#about"><img src="/assets/Photos/scroll-down.svg" alt="ScrollDown" /></a>
           </div>
         </div>
       </section>
 
-      {/* AboutSection */}
+      {/* About Section */}
       <section className="about">
         <div className="container">
           <div className="about-content">
             <div className="image-container">
-              <img
-                src="/assets/Photos/Mersal-Pic.png"
-                alt="Mersal"
-                className="profile-img"
-              />
+              <img src="/assets/Photos/Mersal-Pic.png" alt="Mersal" className="profile-img" />
             </div>
             <div className="text-container">
-              <h2 className="about-title Title">About Me</h2>
-              <p className="about-text">
-                I'am Mersal, I have more than two years of experience in
-                front-end development and graphic design, as well as my
-                experience in video editing. Moreover, writing content using
-                Word application and made powerpoint design, despite being a
-                student at the Faculty of Arts, my experience and skills in
-                development and design show my dedication and professionalism. I
-                can create websites, design YouTube thumbnails, logos, and craft
-                social media posts professionally , powerpoint design . Please
-                feel free to contact me if you need any services in these areas
-                , I am looking forward to providing the best service for you.
-              </p>
+              <h2 className="about-title Title">{t("aboutMe")}</h2>
+              <p className="about-text" dir="auto">{t("aboutText")}</p>
+              <div className="about-me-btns">
+                <a href="/cv.pdf" className="download-cv">{t("downloadCV")}</a>
+              </div>
             </div>
           </div>
         </div>
       </section>
-          {/* Skills Marquee Section */}
-      <section className="skills-section"> 
-        <Marquee speed={60} gradient={false}>
-          <img src="/assets/Photos/apps/ai.png" alt="Adobe Illustrator" className="skill-icon" />
-          <img src="/assets/Photos/apps/ps.png" alt="Adobe Photoshop" className="skill-icon" />
-          <img src="/assets/Photos/apps/id.png" alt="Adobe InDesign" className="skill-icon" />
-          <img src="/assets/Photos/apps/ae.png" alt="Adobe After Effects" className="skill-icon" />
-          <img src="/assets/Photos/apps/pr.png" alt="Adobe Premiere Pro" className="skill-icon" />
-          <img src="/assets/Photos/apps/Canva.png" alt="Canva" className="skill-icon" />
-          <img src="/assets/Photos/apps/miro.png" alt="JavaScript" className="skill-icon" />
-          <img src="/assets/Photos/apps/xd.png" alt="Adobe XD" className="skill-icon" />
-          <img src="/assets/Photos/apps/figma.png" style={{width:"60px"}} alt="Figma" className="skill-icon" />
-          <img src="/assets/Photos/apps/html.png" alt="HTML" className="skill-icon" />
-          <img src="/assets/Photos/apps/css.png" alt="CSS" className="skill-icon" />
-          <img src="/assets/Photos/apps/js.png" alt="JavaScript" className="skill-icon" />
-          <img src="/assets/Photos/apps/react.png" alt="JavaScript" className="skill-icon" />
-        </Marquee>
-      </section>
 
-
+      {/* باقي الأقسام */}
       <section className="Services-section"> 
-        <h1 className="Title">Services</h1>
+        <h1 className="Title">{t("services-t")}</h1>
         <ServiceList/>
       </section>
 
       <section className="gallery-section">
-      <GallerySection />
+        <GallerySection />
+      </section>
+
+      <section className="statistics-section">
+        <Statistics />
       </section>
 
       <section className="gallery-section">
-      <Statistics />
-      </section>
-      <section className="gallery-section">
-      <h1 className="Title">Testimonials</h1>
-      <Testimonials />
+        <h1 className="Title">{t("testimonials")}</h1>
+        <Testimonials />
       </section>
 
       <section className="gallery-section">
-      <h1 className="Title">Certificates</h1>
-      <Certificates />
+        <h1 className="Title">{t("certificates")}</h1>
+        <Certificates />
       </section>
-                  
+
+      <section className="CTA-section">
+        <div>
+          <img src="/assets/Photos/fire.gif" alt="" />
+          <h1>{t("ctaText")}</h1>
+          <a className="fire-btn" href="#">{t("ctaButton")}</a>
+        </div>
+      </section>
+
+      <section className="Trusted-by-section">
+        <h1>{t("trustedBy")}</h1>
+        <img src="/assets/Photos/Trusted-by.png" alt="" />
+      </section>
+
+      <Footer/>
     </>
   );
 }

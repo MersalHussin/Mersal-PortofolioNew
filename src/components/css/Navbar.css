@@ -171,24 +171,22 @@ transform: scale(1.3 );
     color:white !important;
   }
 }
-.contact-us{
-  background-color: var(--second--color); ;
-  padding: 10px 15px;
-  border-radius: 10px;
+.change-language{
   color:white !important;
-  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   transition: 0.3s;
 }
-.contact-us:hover{
-  background-color: var(--main--color) ;
-  padding: 10px 15px;
-  border-radius: 10px;
-  color:white !important;
-  font-weight: bold;
+.change-language:hover{
+  color:var(--second--color) !important;
 }
-.contact-us i{
- color:white;
- margin-right:5px;
+
+.change-language i{
+ color:var(--second--color);
+ margin:0 10px;
 }
 
 

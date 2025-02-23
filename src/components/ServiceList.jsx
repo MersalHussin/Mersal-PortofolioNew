@@ -1,13 +1,17 @@
-const services = [
-  { src: "https://cdn.lordicon.com/bzxxzycl.json", title: "Web Development", text: "I can create websites, design YouTube thumbnails, logos, and craft social media posts professionally" },
-  { src: "https://cdn.lordicon.com/ovxlloho.json", title: "Graphic Design", text: "I specialize in creating visually appealing designs for various digital platforms" },
-  { src: "https://cdn.lordicon.com/ewtvnblg.json", title: "SEO Optimization", text: "Improving website rankings and visibility through effective SEO strategies" },
-  { src: "https://cdn.lordicon.com/qfwgmyhc.json", title: "Content Writing", text: "Crafting engaging and informative content for blogs, websites, and social media" },
-  { src: "https://cdn.lordicon.com/weynygnn.json", title: "Video Editing", text: "Editing and enhancing videos for YouTube, social media, and professional presentations" },
-  { src: "https://cdn.lordicon.com/wbthjkyu.json", title: "App Development", text: "Building responsive and functional mobile applications tailored to user needs" }
-];
+import { useTranslation } from "react-i18next";
 
 const ServiceList = () => {
+  const { t } = useTranslation();
+
+  const services = [
+    { src: "https://cdn.lordicon.com/bzxxzycl.json", title: t("services.web"), text: t("services.webText") },
+    { src: "https://cdn.lordicon.com/ovxlloho.json", title: t("services.graphic"), text: t("services.graphicText") },
+    { src: "https://cdn.lordicon.com/ewtvnblg.json", title: t("services.seo"), text: t("services.seoText") },
+    { src: "https://cdn.lordicon.com/qfwgmyhc.json", title: t("services.content"), text: t("services.contentText") },
+    { src: "https://cdn.lordicon.com/pfmdukue.json", title: t("services.branding"), text: t("services.brandingText") },
+    { src: "https://cdn.lordicon.com/wbthjkyu.json", title: t("services.app"), text: t("services.appText") }
+  ];
+
   return (
     <div className="services">
       {services.map((service, index) => (

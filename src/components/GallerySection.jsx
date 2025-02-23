@@ -1,3 +1,4 @@
+import { t } from "i18next";
 
 const projects = [
   {
@@ -49,35 +50,31 @@ const projects = [
 function GallerySection (){
   return (
 <>
-    <h1 className="Title">Gallery</h1>
+      <h1 className="Title">{t("gallery.title")}</h1>
       {projects.map((project, index) => (
         <div className="PJS Web" key={index}>
-          <h3 className="sub Title">{project.category}</h3>
+          <h3 className="sub Title">{t(`gallery.categories.${project.category}`)}</h3>
           {project.items.map((item, idx) => (
-            <a href={item.link} target="_blank" className="PJ" key={idx}>
+            <a href={item.link} target="_blank" rel="noopener noreferrer" className="PJ" key={idx}>
               <img src={item.image} alt={item.name} />
               <div className="data">
                 <div className="view">
-                    <lord-icon
-            src="https://cdn.lordicon.com/wsbmifnf.json"
-            trigger="loop"
-            colors="primary:#3fd357,secondary:#3fd357"
-                style={{ width: '100px', height: '100px' }}>
-            </lord-icon>
-                  <h6>Open Project</h6>
+                  <lord-icon
+                    src="https://cdn.lordicon.com/wsbmifnf.json"
+                    trigger="loop"
+                    colors="primary:#3fd357,secondary:#3fd357"
+                    style={{ width: '100px', height: '100px' }}>
+                  </lord-icon>
+                  <h6>{t("gallery.openProject")}</h6>
                 </div>
                 <h3>{item.name}</h3>
-                <p>{project.category}</p>
+                <p>{t(`gallery.categories.${project.category}`)}</p>
               </div>
             </a>
           ))}
-          {/* <a href="#" className="see-m-BTN">
-            See More{' '}
-            <i className={`fa-brands ${project.category === "Graphic Design" ? "fa-behance" : "fa-github"}`}></i>
-          </a> */}
         </div>
       ))}
-</>
+    </>
   );
 };
 
