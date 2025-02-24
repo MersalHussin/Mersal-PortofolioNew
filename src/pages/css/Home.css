@@ -46,9 +46,9 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(#07195200,#07195262) ,url('/public/assets/Photos/LandBG.png') no-repeat center center;
+  background: linear-gradient(#07195200,#07195262) ,url('/public/assets/Photos/LandBG.webp') no-repeat center center;
   background-size: cover;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   text-align: center;
   color: var(--white--color);
 }
@@ -464,7 +464,13 @@ opacity: 0.3;
 
 @media( width <= 900px){
   .sub.Title{
-    width: 320px;
+    width: 330px;
+  }
+}
+@media( width <= 400px){
+  .sub.Title{
+    width: 300px;
+    font-size: 30px;
   }
 }
 .sub.Title:hover{
@@ -763,7 +769,7 @@ footer {
 }
 footer p {
   width: 500px;
-  padding: 10px 20px 0 0 ;
+  padding: 10px 20px 0 ;
   margin: auto;
   font-size: 14px;
 }

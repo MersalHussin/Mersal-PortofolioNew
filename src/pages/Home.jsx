@@ -49,7 +49,7 @@ function Home() {
         <div className="container">
           <div className="about-content">
             <div className="image-container">
-              <img src="/assets/Photos/Mersal-Pic.png" alt="Mersal" className="profile-img" />
+              <img src="/assets/Photos/Mersal-Pic.webp" alt="Mersal" className="profile-img" />
             </div>
             <div className="text-container">
               <h2 className="about-title Title">{t("aboutMe")}</h2>
@@ -60,6 +60,23 @@ function Home() {
             </div>
           </div>
         </div>
+      </section>
+      <section className="skills-section"> 
+        <Marquee speed={60} gradient={false}>
+          <img src="/assets/Photos/apps/ai.webp" alt="Adobe Illustrator" className="skill-icon" />
+          <img src="/assets/Photos/apps/ps.webp" alt="Adobe Photoshop" className="skill-icon" />
+          <img src="/assets/Photos/apps/id.webp" alt="Adobe InDesign" className="skill-icon" />
+          <img src="/assets/Photos/apps/ae.webp" alt="Adobe After Effects" className="skill-icon" />
+          <img src="/assets/Photos/apps/pr.webp" alt="Adobe Premiere Pro" className="skill-icon" />
+          <img src="/assets/Photos/apps/canva.webp" alt="Canva" className="skill-icon" />
+          <img src="/assets/Photos/apps/miro.webp" alt="JavaScript" className="skill-icon" />
+          <img src="/assets/Photos/apps/xd.webp" alt="Adobe XD" className="skill-icon" />
+          <img src="/assets/Photos/apps/figma.webp" style={{width:"60px"}} alt="Figma" className="skill-icon" />
+          <img src="/assets/Photos/apps/html.webp" alt="HTML" className="skill-icon" />
+          <img src="/assets/Photos/apps/css.webp" alt="CSS" className="skill-icon" />
+          <img src="/assets/Photos/apps/js.webp" alt="JavaScript" className="skill-icon" />
+          <img src="/assets/Photos/apps/react.webp" alt="JavaScript" className="skill-icon" />
+        </Marquee>
       </section>
 
       {/* باقي الأقسام */}
