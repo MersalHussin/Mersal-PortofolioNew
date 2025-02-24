@@ -4,12 +4,12 @@ const ServiceList = () => {
   const { t } = useTranslation();
 
   const services = [
-    { src: "https://cdn.lordicon.com/bzxxzycl.json", title: t("services.web"), text: t("services.webText") },
-    { src: "https://cdn.lordicon.com/ovxlloho.json", title: t("services.graphic"), text: t("services.graphicText") },
-    { src: "https://cdn.lordicon.com/ewtvnblg.json", title: t("services.seo"), text: t("services.seoText") },
-    { src: "https://cdn.lordicon.com/qfwgmyhc.json", title: t("services.content"), text: t("services.contentText") },
+    { src: "https://cdn.lordicon.com/ewtvnblg.json", title: t("services.graphic"), text: t("services.graphicText") },
+    { src: "https://cdn.lordicon.com/wbthjkyu.json", title: t("services.web"), text: t("services.webText") },
+    { src: "https://cdn.lordicon.com/qfwgmyhc.json", title: t("services.video"), text: t("services.videoText") },
+    { src: "https://cdn.lordicon.com/ovxlloho.json", title: t("services.ui"), text: t("services.uiText") },
+    { src: "https://cdn.lordicon.com/bzxxzycl.json", title: t("services.responsive"), text: t("services.responsiveText") },
     { src: "https://cdn.lordicon.com/pfmdukue.json", title: t("services.branding"), text: t("services.brandingText") },
-    { src: "https://cdn.lordicon.com/wbthjkyu.json", title: t("services.app"), text: t("services.appText") }
   ];
 
   return (

@@ -5,6 +5,7 @@
   font-family: zain;
   text-decoration: none;
   list-style: none;
+  scroll-behavior: smooth;
 }
 
 :root{
@@ -25,7 +26,7 @@ body{
 
 /* Start Components */
 section {
-  padding: 100px 0;
+  padding: 50px 0;
 }
 
 .see-m-BTN{
@@ -35,6 +36,8 @@ section {
   border-radius: 5px;
   margin-top: 20px;
 }
+
+
 /* End Components */
 
 /* Start Home Section */
@@ -56,7 +59,7 @@ section {
 
 .welcome-text {
   font-size: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   opacity: 0.8;
 }
 
@@ -67,8 +70,16 @@ section {
   color: var(--second--color);
 }
 
+@media( width <= 550px){
+  .name {
+    font-size: 100px;
+    margin-bottom: -30px;
+    margin-top: -30px;
+  }
+}
+
 .buttons {
-  margin-top: 10px !important;
+  margin-top: -10px !important;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -218,16 +229,22 @@ margin:5px ;
 }
 /*  */
 .Title::after {
-  content: url("/public/assets/Photos/Title-line.svg");
-  width: 100%;
-  height: 100%;
+  content:"";
+  width: 100px;
+  height: 4px;
   position: absolute;
-  top: 100px;
+  top: 120px;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: -1;
-
+  background-color: var(--second--color);
+  border-radius: 30px;
+  transition: 0.3s;
 }
+.Title:hover::after {
+  width: 150px;
+}
+
 
 .about-text {
   font-size: 20px;
@@ -254,6 +271,16 @@ margin:5px ;
     text-align: center;
   }
 }
+
+@media( width <= 550px){
+  .Title {
+    font-size: 60px;
+  }
+  .Title::after {
+    top: 90px;
+  }
+}
+
 /* End About Section */
 
 /* Start skills */
@@ -290,14 +317,14 @@ margin:5px ;
 .Services-section .services {
   display: flex;
   justify-content: center;
-  max-width: 1000px;
+  max-width: 1280px;
   margin: auto;
   align-items: center;
   flex-wrap: wrap;
   gap: 30px;
 }
 .Services-section .services  .service{
-  width: 300px;
+  width: 380px;
   padding: 20px;
   background: var(--main--color);
   border-radius: 10px;
@@ -306,6 +333,7 @@ margin:5px ;
   border: 2px solid var(--darkMain--color);
   box-shadow: var(--darkMain--color) 7px 7px 0px 1px;
   transition: 0.3s;
+  font-size: 18px;
 }
 .Services-section .services  .service:hover{
   box-shadow: var(--second--color) -7px -7px 0px 1px;
@@ -322,6 +350,11 @@ font-size: 30px;
 color: var(--white--color);
 }
 
+@media( width <= 550px){
+  .Services-section .services  .service{
+    width: 300px;
+  }
+}
 /* End Services Section */
 
 /* Start Gallery Section */
@@ -349,6 +382,8 @@ overflow: hidden;
 cursor: pointer;
 position: relative;
 }
+
+
 .gallery-section .PJS .PJ .data{
   background:linear-gradient(#07195200,#071952d8  , var(--main--color) 80%); ;
   width: 100%;
@@ -425,7 +460,12 @@ opacity: 0.3;
   transition: 0.3s;
   box-shadow: 5px 5px 0 var(--darkMain--color);
   border: 2px solid var(--darkMain--color);
+}
 
+@media( width <= 900px){
+  .sub.Title{
+    width: 320px;
+  }
 }
 .sub.Title:hover{
   background-color: var(--darkMain--color);
@@ -438,6 +478,7 @@ opacity: 0.3;
 }
 .sub.Title::after{
   content: "";
+  width: 0;
 }
 
 /* End Gallery Section */
@@ -500,7 +541,7 @@ transform: scale(1.1);
 
 .testimonial-container {
   max-width: 1600px;
-  padding: 30px 0;
+  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -520,7 +561,7 @@ transform: scale(1.1);
   box-shadow: 10px 10px 0px var(--darkMain--color);
   transition: 0.3s;
   border: 3px solid var(--darkMain--color);
-  width: 500px;
+  width: 450px;
   margin: 10px;
   flex-wrap: wrap;
 }
@@ -546,7 +587,7 @@ transform: scale(1.1);
 }
 
 .testimonial-text {
-  font-size: 25px;
+  font-size: 20px;
   line-height: 1.6;
   padding: 20px;
   display: flex;
@@ -585,7 +626,11 @@ transform: scale(1.1);
   margin-top: -10px;
 }
 
-
+@media( width <= 550px){
+  .testimonial-text {
+    font-size: 16px;
+  }
+}
 /* End Testmonials Section */
 
 /*Start Certificates Section */
@@ -597,6 +642,7 @@ transform: scale(1.1);
   flex-wrap: wrap;
   max-width: 1280px;
   margin: auto;
+  padding: 20px;
 }
 
 .certificate-card {
@@ -652,10 +698,12 @@ transform: scale(1.1);
 .CTA-section h1 {
   font-weight: 900;
   line-height: 1;
+  padding: 0 30px;
+  width: 480px;
 }
 .CTA-section .fire-btn {
   margin: auto;
-  width: 170px;
+  width: 200px;
   margin-top: 20px;
   background-color: var(--white--color);
   border: 3px solid var(--main--color) !important;
@@ -664,6 +712,16 @@ transform: scale(1.1);
 }
 .CTA-section .fire-btn:hover {
   background:linear-gradient(#ff9000,#ffd900) }
+
+  @media( width <= 900px){
+    .CTA-section h1 {
+      font-size: 35px;
+      width: 320px;
+    }
+    .CTA-section img {
+      width: 200px;
+    }
+  }
 /* END CTA Section */
 
 
@@ -680,6 +738,17 @@ transform: scale(1.1);
 .Trusted-by-section img{
   width: 800px;
   margin: auto;
+}
+
+@media( width <= 900px){
+  .Trusted-by-section img{
+    width: 500px;
+  }
+}
+@media( width <= 550px){
+  .Trusted-by-section img{
+    width: 350px !important;
+  }
 }
 /* Strat Trusted By Section */
 
@@ -717,5 +786,12 @@ footer .social-icons  {
 footer .social-icons img {
   width: 30px;
   opacity: 1;
+}
+
+@media( width <= 550px){
+  footer p {
+    font-size: 16px;
+    width: 300px;
+  }
 }
 /* EndFooter  */

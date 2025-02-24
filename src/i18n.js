@@ -10,7 +10,7 @@ const resources = {
       "About": "About",
       "Services": "Services",
       "services-t": "Services",
-      "Gallery": "Gallery",
+      "Portfolio": "Gallery",
       "Testimonials": "Testimonials",
       "Contact": "Contact",
       // Hero Section
@@ -44,23 +44,24 @@ const resources = {
       },
       "services": {
         "web": "Web Development",
-        "webText": "I can create websites, design YouTube thumbnails, logos, and craft social media posts professionally",
+        "webText": "Creating dynamic and responsive websites with a focus on user experience.",
         
         "graphic": "Graphic Design",
-        "graphicText": "I specialize in creating visually appealing designs for various digital platforms",
+        "graphicText": "Crafting visually stunning and impactful designs for various digital platforms.",
         
-        "seo": "SEO Optimization",
-        "seoText": "Improving website rankings and visibility through effective SEO strategies",
+        "responsive": "Responsive Design",
+        "responsiveText": "Ensuring seamless and optimized experiences across all screen sizes and devices",
         
-        "content": "Content Writing",
-        "contentText": "Crafting engaging and informative content for blogs, websites, and social media",
+        "video": "Video Editing",
+        "videoText": "Producing high-quality, engaging video content that enhances identity.",
         
         "branding": "Full Branding",
-        "brandingText": "Editing and enhancing videos for YouTube, social media, and professional presentations",
+        "brandingText": "Developing a strong, cohesive brand identity, from logos to marketing materials",
         
-        "app": "App Development",
-        "appText": "Building responsive and functional mobile applications tailored to user needs"
+        "ui": "UI&UX Desgin",
+        "uiText": "Designing intuitive, user-friendly digital experiences that enhance usability "
       },
+      "footerText" :"If you’ve made it this far on my site, big props to you, seriously! Honored to have you here, for real. Hope you’ve taken the step to become an absolute legend to everyone around you and light up the world—so what’s up, ready to Fire The World? 🔥"
     }
   },
   ar: {
@@ -69,16 +70,16 @@ const resources = {
       "About": "من أنا",
       "Services": "الخدمات",
       "Portfolio": "المعرض",
-      "Testimonials": "الشهادات",
+      "Testimonials": "آراء أفتخر بها",
       "Contact": "اتصل بنا",
       "Lang": "الإنجليزية",
       // Hero Section
       "mersal": "مــرســال",
-      "welcome": "أهلًا بيك يامشطشط في موقعي الشخصي ",
+      "welcome": "أهلًا بيك في موقعي الشخصي ",
       "fireTheWorld": "روح ولع الدنيا",
       "downloadCV": " السيرة الذاتية",
       "aboutMe": "من أنا",
-      "aboutText": "أنا فقط مرسال، لا أُصمم فقط، بل أشعل الأشياء! 🔥 من الشعارات إلى تصميمات UI/UX السلسة والتأثيرات البصرية القوية، أصنع تجارب تلفت الانتباه وتترك أثرًا. بالإضافة إلى ذلك، أبني المواقع لجعل كل هذا حقيقة. دعونا نصنع شيئًا لا يُنسى!",
+      "aboutText": "أنا مرسال، مش بس بصمم، لكن بحاول أخليك تولع الدنيا🔥, من أول الشعارات لـ حد تصميمات UI/UX السلسة والتأثيرات البصرية القوية، بعمل تجارب تلفت الانتباه وتترك أثر واضح. لأ ومش بس كده ده ممكن أبنيلك المواقع عشان كل تحول كل ده لواقع. مستني ايه يلا نولع الدنيا ونعمل حاجه متتنسيش",
       "services": "الخدمات",
       "services-t": "الخدمات",
       "testimonials": "آراء أفتخر بها",
@@ -99,28 +100,29 @@ const resources = {
       "statistics": {
         "design": "تصميم",
         "website": "موقع",
-        "logo": "لوجو",
+        "logo": "شعار",
         "video": "فيديو"
       },
       "services": {
         "web": "تطوير الويب",
-        "webText": "أستطيع إنشاء مواقع الويب، تصميم صور مصغرة لليوتيوب، الشعارات، وإنشاء منشورات احترافية لوسائل التواصل الاجتماعي",
+        "webText": "إنشاء مواقع إلكترونية تفاعلية وسريعة بأداء عالي وتجربة مستخدم ممتازة",
     
         "graphic": "تصميم الجرافيك",
-        "graphicText": "متخصص في إنشاء تصاميم جذابة لمختلف المنصات الرقمية",
+        "graphicText": "تصميمات بصرية قوية وجذابة تناسب مجالك و مختلف المنصات الرقمية",
     
-        "seo": "تحسين محركات البحث",
-        "seoText": "تحسين ترتيب المواقع وزيادة الظهور من خلال استراتيجيات سيو فعالة",
+        "responsive": "موقع متجاوب",
+        "responsiveText": "ضمان تجربة استخدام مريحة وسلسة على كل الشاشات والأجهزة",
     
-        "content": "كتابة المحتوى",
-        "contentText": "كتابة محتوى جذاب ومفيد للمدونات، المواقع الإلكترونية، ووسائل التواصل الاجتماعي",
+        "video": "مونتاج الفيديوهات",
+        "videoText": "إنتاج فيديوهات احترافية بجودة عالية تبرز العلامة التجارية وتوصل الرسالة",
     
         "branding": "الهوية البصرية",
-        "brandingText": "تحرير وتحسين الفيديوهات لليوتيوب، وسائل التواصل الاجتماعي، والعروض التقديمية الاحترافية",
+        "brandingText": "بناء علامة تجارية متكاملة من أول الشعار و التصميمات لحد الموقع",
     
-        "app": "تطوير التطبيقات",
-        "appText": "إنشاء تطبيقات محمولة متجاوبة وعملية تلبي احتياجات المستخدمين"
-      }
+        "ui": "UI/UX تصميم",
+        "uiText": "تصميم تجارب استخدام سهلة وجذابة تضمن تفاعل المستخدمين بسلاسة"
+      },
+      "footerText":"لو وصلت لحد النقطة دي من الموقع فـ أنا أُحيك ولله وشرفتني ولله  وياريت تكون أخدت الخطوة وتبقى شخص مشطشط لكل اللي حواليك وتولع الدنيا فـ إيه مش يلا نولع الدنيا 🔥"
     }
   }
 };
