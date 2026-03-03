@@ -30,12 +30,20 @@ const resources = {
       gallery: {
         title: "Gallery",
         openProject: "Open Project",
+        all: "All",
+        projects: "Projects",
+        viewAll: "View All Projects",
         categories: {
           "Graphic Design": "Graphic Design",
           "Web Development": "Web Development",
           "UI/UX Design": "UI/UX Design",
           "Video Editing": "Video Editing",
         },
+      },
+      projects: {
+        title: "All Projects",
+        description: "Explore all my creative work across different categories - from graphic design to web development and beyond.",
+        backHome: "Back to Home",
       },
       statistics: {
         design: "Design",
@@ -94,12 +102,20 @@ const resources = {
       gallery: {
         title: "المعرض",
         openProject: "افتح المشروع",
+        all: "الكل",
+        projects: "مشروع",
+        viewAll: "جميع المشاريع",
         categories: {
           "Graphic Design": "تصميم الجرافيك",
           "Web Development": "تطوير الويب",
           "UI/UX Design": "تصميم UI/UX",
           "Video Editing": "مونتاج الفيديو",
         },
+      },
+      projects: {
+        title: "جميع المشاريع",
+        description: "استكشف جميع أعمالي الإبداعية عبر فئات مختلفة - من تصميم الجرافيك إلى تطوير الويب وما بعدها.",
+        backHome: "العودة للرئيسية",
       },
       statistics: {
         design: "تصميم",
