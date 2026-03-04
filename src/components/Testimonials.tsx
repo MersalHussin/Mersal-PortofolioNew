@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
+import gsap from "gsap";
 
 interface TestimonialItem {
   name: string;
@@ -82,53 +83,158 @@ const testimonials: TestimonialItem[] = [
   },
 ];
 
-const Testimonials: React.FC = () => {
-  return (
-    <div className="max-w-[1600px] p-5 flex justify-center items-center gap-[10px] flex-wrap mx-auto" dir="rtl">
-      {testimonials.map((item, index) => (
-        <div
-          className="group relative p-5 bg-main text-white rounded-[10px] transition-all duration-300 border-[3px] border-main-dark w-[450px] m-[10px] flex-wrap hover:border-accent"
-          style={{
-            boxShadow: "10px 10px 0px #00134E",
-          }}
-          onMouseEnter={(e) => {
-            (e.currentTarget as HTMLDivElement).style.boxShadow =
-              "5px 5px 0px #3FD357";
-          }}
-          onMouseLeave={(e) => {
-            (e.currentTarget as HTMLDivElement).style.boxShadow =
-              "10px 10px 0px #00134E";
-          }}
-          key={index}
-        >
-          {/* Quote icon using Font Awesome */}
-          <span
-            className="absolute -top-10 -right-5 text-[60px] text-accent font-black transition-all duration-300 group-hover:text-white group-hover:scale-110"
-            style={{ fontFamily: "'Font Awesome 5 Free'" }}
-          >
-            &#xf10e;
-          </span>
+// Testimonial Card Component
+const TestimonialCard: React.FC<{ item: TestimonialItem }> = ({ item }) => (
+  <div
+    className="group relative p-5 bg-main text-white rounded-[10px] transition-all duration-300 border-[3px] border-main-dark w-full my-3 hover:border-accent"
+    style={{
+      boxShadow: "10px 10px 0px #00134E",
+    }}
+    onMouseEnter={(e) => {
+      (e.currentTarget as HTMLDivElement).style.boxShadow = "5px 5px 0px #3FD357";
+    }}
+    onMouseLeave={(e) => {
+      (e.currentTarget as HTMLDivElement).style.boxShadow = "10px 10px 0px #00134E";
+    }}
+  >
+    <span
+      className="absolute -top-10 -right-5 text-[60px] text-accent font-black transition-all duration-300 group-hover:text-white group-hover:scale-110"
+      style={{ fontFamily: "'Font Awesome 5 Free'" }}
+    >
+      &#xf10e;
+    </span>
+    <p className="text-xl max-sm:text-base leading-relaxed p-5 flex justify-center items-center flex-wrap">
+      {item.text}
+    </p>
+    <div className="flex items-center mt-4" dir="ltr">
+      <img
+        className="w-[70px] h-[70px] rounded-full border-2 border-accent mr-[10px] bg-white"
+        src={item.image}
+        alt={item.name}
+      />
+      <div>
+        <h4 className="text-accent font-black text-xl text-left">{item.name}</h4>
+        <p className="text-base text-left -mt-[10px]">{item.position}</p>
+      </div>
+    </div>
+  </div>
+);
 
-          <p className="text-xl max-sm:text-base leading-relaxed p-5 flex justify-center items-center flex-wrap">
-            {item.text}
-          </p>
-          <div className="flex items-center mt-4" dir="ltr">
-            <img
-              className="w-[70px] h-[70px] rounded-full border-2 border-accent mr-[10px] bg-white"
-              src={item.image}
-              alt={item.name}
-            />
-            <div>
-              <h4 className="text-accent font-black text-xl text-left">
-                {item.name}
-              </h4>
-              <p className="text-base text-left -mt-[10px]">
-                {item.position}
-              </p>
-            </div>
-          </div>
-        </div>
-      ))}
+// Single Column Component with vertical scroll
+const ScrollColumn: React.FC<{ 
+  items: TestimonialItem[]; 
+  direction: "up" | "down";
+  speed: number;
+}> = ({ items, direction, speed }) => {
+  const columnRef = useRef<HTMLDivElement>(null);
+  const tweenRef = useRef<gsap.core.Tween | null>(null);
+
+  const handleMouseEnter = () => {
+    if (tweenRef.current) {
+      gsap.to(tweenRef.current, { timeScale: 0, duration: 0.5, ease: "power2.out" });
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (tweenRef.current) {
+      gsap.to(tweenRef.current, { timeScale: 1, duration: 0.5, ease: "power2.out" });
+    }
+  };
+
+  useEffect(() => {
+    if (tweenRef.current) tweenRef.current.kill();
+
+    const columnEl = columnRef.current;
+    if (columnEl && items.length > 0) {
+      const totalHeight = columnEl.scrollHeight / 2;
+      
+      if (direction === "up") {
+        gsap.set(columnEl, { y: 0 });
+        tweenRef.current = gsap.to(columnEl, {
+          y: -totalHeight,
+          duration: speed,
+          ease: "none",
+          repeat: -1,
+        });
+      } else {
+        gsap.set(columnEl, { y: -totalHeight });
+        tweenRef.current = gsap.to(columnEl, {
+          y: 0,
+          duration: speed,
+          ease: "none",
+          repeat: -1,
+        });
+      }
+    }
+
+    return () => {
+      if (tweenRef.current) tweenRef.current.kill();
+    };
+  }, [items.length, direction, speed]);
+
+  return (
+    <div 
+      className="relative overflow-hidden h-[700px] flex-1 px-2"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      {/* Top gradient */}
+      <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-main to-transparent z-10 pointer-events-none" />
+      {/* Bottom gradient */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-main to-transparent z-10 pointer-events-none" />
+      
+      <div ref={columnRef} className="will-change-transform" dir="rtl">
+        {[...items, ...items].map((item, idx) => (
+          <TestimonialCard key={idx} item={item} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const Testimonials: React.FC = () => {
+  const [columns, setColumns] = useState(3);
+
+  // Handle responsive columns
+  useEffect(() => {
+    const updateColumns = () => {
+      if (window.innerWidth < 640) {
+        setColumns(1);
+      } else if (window.innerWidth < 1024) {
+        setColumns(2);
+      } else {
+        setColumns(3);
+      }
+    };
+
+    updateColumns();
+    window.addEventListener("resize", updateColumns);
+    return () => window.removeEventListener("resize", updateColumns);
+  }, []);
+
+  // Split testimonials into columns
+  const splitIntoColumns = (items: TestimonialItem[], numCols: number) => {
+    const result: TestimonialItem[][] = Array.from({ length: numCols }, () => []);
+    items.forEach((item, index) => {
+      result[index % numCols].push(item);
+    });
+    return result;
+  };
+
+  const columnData = splitIntoColumns(testimonials, columns);
+
+  return (
+    <div className="max-w-[1600px] mx-auto px-4">
+      <div className="flex gap-4">
+        {columnData.map((items, index) => (
+          <ScrollColumn
+            key={`col-${columns}-${index}`}
+            items={items}
+            direction={index % 2 === 0 ? "up" : "down"}
+            speed={items.length * 8}
+          />
+        ))}
+      </div>
     </div>
   );
 };

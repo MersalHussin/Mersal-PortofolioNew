@@ -67,10 +67,10 @@ const ServiceList: React.FC = () => {
             colors="primary:#ffffff,secondary:#3fd357"
             style={{ width: "150px", height: "150px" }}
           />
-          <h2 className="text-accent font-black text-[30px]">
+          <h2 className="text-accent font-black text-[25px]">
             {service.title}
           </h2>
-          <p className="text-white">{service.text}</p>
+          {/* <p className="text-white">{service.text}</p> */}
         </div>
       ))}
     </div>

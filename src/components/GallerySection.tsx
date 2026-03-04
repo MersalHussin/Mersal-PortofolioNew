@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
@@ -9,7 +9,7 @@ const ProjectCard: React.FC<{ item: ProjectItem; t: (key: string) => string }> =
     href={item.link}
     target="_blank"
     rel="noopener noreferrer"
-    className="group flex-shrink-0 w-[320px] h-[220px] mx-3 bg-main-2 rounded-xl text-center transition-all duration-500 border-2 border-main-dark overflow-hidden cursor-pointer relative hover:border-accent hover:scale-100"
+    className="group flex-shrink-0  w-[250px] h-[140px] lg:w-[500px] lg:h-[280px] mx-3 bg-main-2 rounded-xl text-center transition-all duration-500 border-2 border-main-dark overflow-hidden cursor-pointer relative hover:border-accent hover:scale-100"
     style={{
       boxShadow: "-4px -4px 0px 1px #00134E",
     }}
@@ -47,7 +47,6 @@ const ProjectCard: React.FC<{ item: ProjectItem; t: (key: string) => string }> =
 
 const GallerySection: React.FC = () => {
   const { t } = useTranslation();
-  const [isPaused, setIsPaused] = useState(false);
   
   const row1Ref = useRef<HTMLDivElement>(null);
   const row2Ref = useRef<HTMLDivElement>(null);
@@ -58,6 +57,31 @@ const GallerySection: React.FC = () => {
   const midPoint = Math.ceil(featuredProjects.length / 2);
   const row1 = featuredProjects.slice(0, midPoint);
   const row2 = featuredProjects.slice(midPoint);
+
+  // Smooth pause/resume handlers for each row
+  const handleRow1Enter = () => {
+    if (tl1Ref.current) {
+      gsap.to(tl1Ref.current, { timeScale: 0, duration: 0.5, ease: "power2.out" });
+    }
+  };
+  
+  const handleRow1Leave = () => {
+    if (tl1Ref.current) {
+      gsap.to(tl1Ref.current, { timeScale: 1, duration: 0.5, ease: "power2.out" });
+    }
+  };
+  
+  const handleRow2Enter = () => {
+    if (tl2Ref.current) {
+      gsap.to(tl2Ref.current, { timeScale: 0, duration: 0.5, ease: "power2.out" });
+    }
+  };
+  
+  const handleRow2Leave = () => {
+    if (tl2Ref.current) {
+      gsap.to(tl2Ref.current, { timeScale: 1, duration: 0.5, ease: "power2.out" });
+    }
+  };
 
   // GSAP infinite scroll animation
   useEffect(() => {
@@ -95,29 +119,18 @@ const GallerySection: React.FC = () => {
     };
   }, [row1.length, row2.length]);
 
-  // Pause/Play control
-  useEffect(() => {
-    if (isPaused) {
-      tl1Ref.current?.pause();
-      tl2Ref.current?.pause();
-    } else {
-      tl1Ref.current?.play();
-      tl2Ref.current?.play();
-    }
-  }, [isPaused]);
-
   return (
     <>
       <h1 className="section-title">{t("gallery.title")}</h1>
 
       {/* GSAP Auto-scrolling Projects */}
-      <div 
-        className="space-y-6 py-4 overflow-hidden"
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
-      >
+      <div className="space-y-6 py-4 overflow-hidden">
         {/* Row 1 - Right to Left */}
-        <div className="relative overflow-hidden">
+        <div 
+          className="relative overflow-hidden"
+          onMouseEnter={handleRow1Enter}
+          onMouseLeave={handleRow1Leave}
+        >
           <div className="absolute left-0 top-0 w-24 h-full bg-gradient-to-r from-main to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 w-24 h-full bg-gradient-to-l from-main to-transparent z-10 pointer-events-none" />
           <div ref={row1Ref} className="flex will-change-transform">
@@ -129,7 +142,11 @@ const GallerySection: React.FC = () => {
 
         {/* Row 2 - Left to Right */}
         {row2.length > 0 && (
-          <div className="relative overflow-hidden">
+          <div 
+            className="relative overflow-hidden"
+            onMouseEnter={handleRow2Enter}
+            onMouseLeave={handleRow2Leave}
+          >
             <div className="absolute left-0 top-0 w-24 h-full bg-gradient-to-r from-main to-transparent z-10 pointer-events-none" />
             <div className="absolute right-0 top-0 w-24 h-full bg-gradient-to-l from-main to-transparent z-10 pointer-events-none" />
             <div ref={row2Ref} className="flex will-change-transform">
