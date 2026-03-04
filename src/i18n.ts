@@ -27,6 +27,17 @@ const resources = {
       ctaText: "Just take a step to \n Fire The World",
       ctaButton: "Let's Fire The World",
       trustedBy: "Trusted By",
+      worldMap: {
+        title: "Honored to Reach",
+        subtitle: "Grateful to have worked with amazing clients across 5 countries",
+        countries: {
+          egypt: "Egypt",
+          saudiArabia: "Saudi Arabia",
+          uae: "UAE",
+          usa: "United States",
+          oman: "Oman",
+        },
+      },
       gallery: {
         title: "Gallery",
         openProject: "Open Project",
@@ -73,6 +84,74 @@ const resources = {
       },
       footerText:
         "If you've made it this far on my site, big props to you, seriously! Honored to have you here, for real. Hope you've taken the step to become an absolute legend to everyone around you and light up the world—so what's up, ready to Fire The World? 🔥",
+      knowMore: "Know More",
+      cv: {
+        title: "Resume",
+        subtitle: "A quick look at my journey, skills, and experience",
+        backHome: "Back to Home",
+        experience: "Work Experience",
+        education: "Education",
+        skills: "Skills",
+        courses: "Courses & Certificates",
+        present: "Present",
+        jobs: [
+          {
+            role: "Graphic Designer & Web Developer",
+            company: "Freelancer",
+            period: "2021 - Present",
+            description: "Designing brand identities, UI/UX, social media posts, and building responsive websites for various clients.",
+          },
+          {
+            role: "Graphic Designer",
+            company: "QSP Agency",
+            period: "2023 - Present",
+            description: "Creating visual content, brand identities, and marketing materials for agency clients.",
+          },
+          {
+            role: "Frontend Developer",
+            company: "Freelance Projects",
+            period: "2022 - Present",
+            description: "Building modern, responsive web applications using React, TypeScript, and Tailwind CSS.",
+          },
+        ],
+        educationList: [
+          {
+            degree: "Bachelor's Degree",
+            school: "University",
+            period: "2021 - Present",
+            description: "Studying Computer Science / Related Field",
+          },
+        ],
+        skillCategories: [
+          {
+            category: "Design",
+            items: ["Adobe Photoshop", "Adobe Illustrator", "Adobe InDesign", "Adobe XD", "Figma", "Canva"],
+          },
+          {
+            category: "Video",
+            items: ["Adobe Premiere Pro", "Adobe After Effects"],
+          },
+          {
+            category: "Development",
+            items: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Tailwind CSS", "Git"],
+          },
+          {
+            category: "Other",
+            items: ["UI/UX Design", "Brand Identity", "Responsive Design", "Miro"],
+          },
+        ],
+        coursesList: [
+          { name: "Certificate 1", issuer: "Issuer 1" },
+          { name: "Certificate 2", issuer: "Issuer 2" },
+          { name: "Certificate 3", issuer: "Issuer 3" },
+          { name: "Certificate 4", issuer: "Issuer 4" },
+          { name: "Certificate 5", issuer: "Issuer 5" },
+          { name: "Certificate 6", issuer: "Issuer 6" },
+          { name: "Certificate 7", issuer: "Issuer 7" },
+          { name: "Certificate 8", issuer: "Issuer 8" },
+          { name: "Certificate 9", issuer: "Issuer 9" },
+        ],
+      },
     },
   },
   ar: {
@@ -99,6 +178,17 @@ const resources = {
       ctaText: "انت بس خد الخطوة إنك  تولع الدنيا",
       ctaButton: "يلا نولع الدنيا",
       trustedBy: "موثوق به من قبل",
+      worldMap: {
+        title: "اتشرفنا نوصل",
+        subtitle: "ممتن إني اشتغلت مع عملاء مميزين في 5 دول",
+        countries: {
+          egypt: "مصر",
+          saudiArabia: "السعودية",
+          uae: "الإمارات",
+          usa: "أمريكا",
+          oman: "عُمان",
+        },
+      },
       gallery: {
         title: "المعرض",
         openProject: "افتح المشروع",
@@ -145,6 +235,74 @@ const resources = {
       },
       footerText:
         "لو وصلت لحد النقطة دي من الموقع فـ أنا أُحيك ولله وشرفتني ولله  وياريت تكون أخدت الخطوة وتبقى شخص مشطشط لكل اللي حواليك وتولع الدنيا فـ إيه مش يلا نولع الدنيا 🔥",
+      knowMore: "اعرف أكتر",
+      cv: {
+        title: "السيرة الذاتية",
+        subtitle: "نظرة سريعة على رحلتي ومهاراتي وخبراتي",
+        backHome: "العودة للرئيسية",
+        experience: "الخبرة العملية",
+        education: "التعليم",
+        skills: "المهارات",
+        courses: "الدورات والشهادات",
+        present: "حتى الآن",
+        jobs: [
+          {
+            role: "مصمم جرافيك ومطور ويب",
+            company: "عمل حر",
+            period: "2021 - حتى الآن",
+            description: "تصميم هويات بصرية، UI/UX، بوستات سوشيال ميديا، وبناء مواقع ويب متجاوبة لعملاء مختلفين.",
+          },
+          {
+            role: "مصمم جرافيك",
+            company: "QSP Agency",
+            period: "2023 - حتى الآن",
+            description: "إنشاء محتوى بصري وهويات بصرية ومواد تسويقية لعملاء الوكالة.",
+          },
+          {
+            role: "مطور واجهات أمامية",
+            company: "مشاريع مستقلة",
+            period: "2022 - حتى الآن",
+            description: "بناء تطبيقات ويب حديثة ومتجاوبة باستخدام React و TypeScript و Tailwind CSS.",
+          },
+        ],
+        educationList: [
+          {
+            degree: "درجة البكالوريوس",
+            school: "الجامعة",
+            period: "2021 - حتى الآن",
+            description: "دراسة علوم الحاسوب / المجال ذو الصلة",
+          },
+        ],
+        skillCategories: [
+          {
+            category: "التصميم",
+            items: ["Adobe Photoshop", "Adobe Illustrator", "Adobe InDesign", "Adobe XD", "Figma", "Canva"],
+          },
+          {
+            category: "الفيديو",
+            items: ["Adobe Premiere Pro", "Adobe After Effects"],
+          },
+          {
+            category: "التطوير",
+            items: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Tailwind CSS", "Git"],
+          },
+          {
+            category: "أخرى",
+            items: ["UI/UX Design", "Brand Identity", "Responsive Design", "Miro"],
+          },
+        ],
+        coursesList: [
+          { name: "شهادة 1", issuer: "الجهة 1" },
+          { name: "شهادة 2", issuer: "الجهة 2" },
+          { name: "شهادة 3", issuer: "الجهة 3" },
+          { name: "شهادة 4", issuer: "الجهة 4" },
+          { name: "شهادة 5", issuer: "الجهة 5" },
+          { name: "شهادة 6", issuer: "الجهة 6" },
+          { name: "شهادة 7", issuer: "الجهة 7" },
+          { name: "شهادة 8", issuer: "الجهة 8" },
+          { name: "شهادة 9", issuer: "الجهة 9" },
+        ],
+      },
     },
   },
 };

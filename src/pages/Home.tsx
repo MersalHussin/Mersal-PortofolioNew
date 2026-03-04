@@ -1,12 +1,14 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import Marquee from "react-fast-marquee";
 import ServiceList from "../components/ServiceList";
 import GallerySection from "../components/GallerySection";
 import Statistics from "../components/Statistics";
 import Testimonials from "../components/Testimonials";
-import Certificates from "../components/Certificates";
 import Footer from "../components/Footer";
+import Clients from "../components/Clients";
+import Map from "../components/Map";
 
 const Home: React.FC = () => {
   const { t } = useTranslation();
@@ -15,13 +17,15 @@ const Home: React.FC = () => {
     <>
       {/* Hero Section */}
       <section
-        className="min-h-[calc(100vh-90px)] flex items-center justify-center bg-cover bg-center bg-no-repeat text-center text-white"
-        style={{
-          backgroundImage:
-            "linear-gradient(#07195200, #07195262), url('/assets/Photos/LandBG.webp')",
-        }}
+        className="min-h-[calc(100vh)]  pt-24 px-5 overflow-hidden flex items-center justify-center bg-cover bg-center bg-no-repeat text-center text-white"
+style={{
+  backgroundImage: "radial-gradient(circle, #082277, #07195200), url('./assets/Photos/HeroBG.svg')",
+}}
       >
-        <div className="max-w-[600px]">
+        <div className="max-w-[1200px] w-full flex justify-center lg:justify-between items-center">
+          <img src="/assets/Photos/MersaHero.png" className="lg:max-w-[500px] xl:max-w-[650px] hidden lg:block " alt="" />
+          
+          <div className="text">
           <h2 className="text-xl mb-4 opacity-80">{t("welcome")}</h2>
           <h1 className="text-[150px] max-sm:text-[100px] font-black text-accent -my-[70px] max-sm:-my-[30px]">
             {t("mersal")}
@@ -34,7 +38,7 @@ const Home: React.FC = () => {
               href="/assets/Photos/Mesal CV.pdf"
               download
               className="text-white text-xl opacity-80 font-bold transition-all duration-300 hover:opacity-100"
-            >
+              >
               {t("downloadCV")}
             </a>
           </div>
@@ -52,27 +56,27 @@ const Home: React.FC = () => {
               <img src="/assets/Photos/Social/Behance.svg" alt="Behance" className="w-5 mx-[5px] inline opacity-80 transition-all duration-300 hover:opacity-100 hover:scale-110" />
             </a>
           </div>
-          <div className="absolute left-1/2 -translate-x-1/2 bottom-[50px] animate-scrollDown">
-            <a href="#about">
-              <img src="/assets/Photos/scroll-down.svg" alt="ScrollDown" className="w-5 mb-5 opacity-80 hover:opacity-100" />
-            </a>
+
           </div>
         </div>
       </section>
 
       {/* About Section */}
       <section className="py-[60px] px-5 flex justify-center items-center" id="about">
-        <div className="max-w-[1100px] w-full">
+        <div className="max-w-[800px] w-full">
           <div className="flex items-center justify-between gap-10 max-md:flex-col max-md:text-center">
-            <div className="flex-1 flex justify-center">
-              <img src="/assets/Photos/Mersal-Pic.webp" alt="Mersal" className="max-w-full h-auto" />
-            </div>
             <div className="flex-1 text-white text-left max-md:text-center">
               <h2 className="section-title">{t("aboutMe")}</h2>
               <p className="text-xl leading-relaxed opacity-90 text-start" dir="auto">
                 {t("aboutText")}
               </p>
-              <div className="pt-5 flex justify-center" style={{ direction: "ltr" }}>
+              <div className="pt-5 flex justify-center gap-5 items-center" style={{ direction: "ltr" }}>
+                <Link
+                  to="/About"
+                  className="fire-btn !m-0"
+                >
+                  {t("knowMore")}
+                </Link>
                 <a
                   href="/assets/Photos/Mesal CV.pdf"
                   download
@@ -127,12 +131,6 @@ const Home: React.FC = () => {
         <Testimonials />
       </section>
 
-      {/* Certificates */}
-      <section className="py-[50px]">
-        <h1 className="section-title">{t("certificates")}</h1>
-        <Certificates />
-      </section>
-
       {/* CTA */}
       <section
         className="bg-fixed bg-center bg-no-repeat bg-cover py-[100px] text-center text-[40px] text-main h-[60vh] flex justify-center items-center"
@@ -159,16 +157,8 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Trusted By */}
-      <section className="max-w-[1200px] mx-auto py-[50px]">
-        <h1 className="text-[40px] text-accent m-5">{t("trustedBy")}</h1>
-        <img
-          src="/assets/Photos/Trusted-by.png"
-          alt=""
-          className="w-[800px] max-md:w-[500px] max-sm:!w-[350px] mx-auto"
-        />
-      </section>
-
+        <Map />
+        <Clients/>
       <Footer />
     </>
   );

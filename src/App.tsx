@@ -1,21 +1,30 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Navbar from "./components/Navbar";
 
-function App() {
+function AppContent() {
+  const location = useLocation();
+  const isHome = location.pathname === "/";
+
   return (
     <div className="text-center">
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/About" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-        </Routes>
-      </BrowserRouter>
+      <Navbar minimal={!isHome} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/projects" element={<Projects />} />
+      </Routes>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
   );
 }
 

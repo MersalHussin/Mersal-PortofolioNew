@@ -20,9 +20,19 @@ module.exports = {
           '0%, 100%': { transform: 'translateX(0)' },
           '50%': { transform: 'translateX(10px)' },
         },
+        'marquee-left': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-33.333%)' },
+        },
+        'marquee-right': {
+          '0%': { transform: 'translateX(-33.333%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
       },
       animation: {
         scrollDown: 'scrollDown 1s ease-in-out infinite',
+        'marquee-left': 'marquee-left 30s linear infinite',
+        'marquee-right': 'marquee-right 30s linear infinite',
       },
     },
   },
