@@ -57,10 +57,10 @@ const resources = {
         backHome: "Back to Home",
       },
       statistics: {
-        design: "Design",
-        website: "Website",
-        logo: "Logo",
-        video: "Video",
+        international: "International Collaborations",
+        projects: "Projects Delivered",
+        clients: "Happy Clients",
+        disciplines: "Creative Disciplines",
       },
       "services-list": {
         web: "Web Development",
@@ -179,7 +179,7 @@ const resources = {
       ctaButton: "يلا نولع الدنيا",
       trustedBy: "موثوق به من قبل",
       worldMap: {
-        title: "اتشرفنا نوصل",
+        title: "الإحصائيات",
         subtitle: "ممتن إني اشتغلت مع عملاء مميزين في 5 دول",
         countries: {
           egypt: "مصر",
@@ -208,10 +208,10 @@ const resources = {
         backHome: "العودة للرئيسية",
       },
       statistics: {
-        design: "تصميم",
-        website: "موقع",
-        logo: "شعار",
-        video: "فيديو",
+        international: "تعاون دولي",
+        projects: "مشروع تم تسليمه",
+        clients: "عميل سعيد",
+        disciplines: "تخصصات إبداعية",
       },
       "services-list": {
         web: "تطوير الويب",

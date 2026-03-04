@@ -120,11 +120,6 @@ style={{
         <GallerySection />
       </section>
 
-      {/* Statistics */}
-      <section>
-        <Statistics />
-      </section>
-
       {/* Testimonials */}
       <section className="py-[50px]" id="testimonials">
         <h1 className="section-title">{t("testimonials")}</h1>
@@ -158,6 +153,7 @@ style={{
       </section>
 
         <Map />
+        <Statistics />
         <Clients/>
       <Footer />
     </>
