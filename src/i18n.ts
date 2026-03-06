@@ -13,6 +13,8 @@ const resources = {
       Portfolio: "Gallery",
       Testimonials: "Testimonials",
       Contact: "Contact",
+      Workshops: "Workshops",
+      Courses: "Courses",
       // Hero Section
       mersal: "Mersal",
       welcome: "Hello, Welcome at My Personal Website",
@@ -81,6 +83,25 @@ const resources = {
         ui: "UI&UX Design",
         uiText:
           "Designing intuitive, user-friendly digital experiences that enhance usability",
+      },
+      workshops: {
+        title: "Workshops",
+        description: "Specialized workshops in design and development with trainee reviews",
+        backHome: "Back to Home",
+        totalWorkshops: "Workshops",
+        totalAttendees: "Attendees",
+        attendees: "Attendees",
+        recording: "Session Recording",
+        reviews: "Trainee Reviews",
+      },
+      courses: {
+        title: "Courses",
+        backHome: "Back to Home",
+        comingSoon: "Coming Soon",
+        description: "We're preparing amazing courses in design, development, and creativity. Stay tuned for something awesome!",
+        feature1: "Video Lessons",
+        feature2: "Creative Projects",
+        feature3: "Certificates",
       },
       footerText:
         "If you've made it this far on my site, big props to you, seriously! Honored to have you here, for real. Hope you've taken the step to become an absolute legend to everyone around you and light up the world—so what's up, ready to Fire The World? 🔥",
@@ -163,6 +184,8 @@ const resources = {
       Testimonials: "آراء أفتخر بها",
       Contact: "اتصل بنا",
       Lang: "الإنجليزية",
+      Workshops: "ورش العمل",
+      Courses: "الكورسات",
       // Hero Section
       mersal: "مــرســال",
       welcome: "أهلًا بيك في موقعي الشخصي ",
@@ -232,6 +255,25 @@ const resources = {
         ui: "UI/UX تصميم",
         uiText:
           "تصميم تجارب استخدام سهلة وجذابة تضمن تفاعل المستخدمين بسلاسة",
+      },
+      workshops: {
+        title: "ورش العمل",
+        description: "ورش عمل متخصصة في التصميم والبرمجة مع آراء المتدربين",
+        backHome: "العودة للرئيسية",
+        totalWorkshops: "ورش عمل",
+        totalAttendees: "متدرب",
+        attendees: "متدرب",
+        recording: "تسجيل السيشن",
+        reviews: "آراء المتدربين",
+      },
+      courses: {
+        title: "الكورسات",
+        backHome: "العودة للرئيسية",
+        comingSoon: "قريبًا",
+        description: "بنجهز كورسات مميزة في التصميم والتطوير والإبداع. استنى حاجة جامدة!",
+        feature1: "دروس فيديو",
+        feature2: "مشاريع إبداعية",
+        feature3: "شهادات",
       },
       footerText:
         "لو وصلت لحد النقطة دي من الموقع فـ أنا أُحيك ولله وشرفتني ولله  وياريت تكون أخدت الخطوة وتبقى شخص مشطشط لكل اللي حواليك وتولع الدنيا فـ إيه مش يلا نولع الدنيا 🔥",

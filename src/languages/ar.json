@@ -1,4 +1,18 @@
 {
   "Home": "الرئيسية",
-  "Lang": "الإنجليزية"
+  "Lang": "الإنجليزية",
+  "Workshops": "ورش العمل",
+  "workshops": {
+    "title": "ورش العمل",
+    "description": "ورش عمل متخصصة في التصميم والبرمجة مع آراء المتدربين",
+    "backHome": "الرجوع للرئيسية",
+    "totalWorkshops": "ورش عمل",
+    "totalAttendees": "متدرب",
+    "totalReviews": "تقييم",
+    "selectWorkshop": "اختر ورشة العمل",
+    "reviewsFor": "آراء المتدربين في",
+    "reviews": "تقييمات",
+    "attendees": "متدرب",
+    "noReviews": "لا توجد تقييمات بعد"
+  }
 }

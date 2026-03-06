@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 interface SectionDef {
   link: string;
@@ -17,6 +17,7 @@ const Navbar: React.FC<NavbarProps> = ({ minimal = false }) => {
   const [scrolled, setScrolled] = useState(false);
   const { t, i18n } = useTranslation();
   const [currentLang, setCurrentLang] = useState(i18n.language || "en");
+  const location = useLocation();
 
   const sections: SectionDef[] = [
     { link: "#", id: "home" },
@@ -111,44 +112,30 @@ const Navbar: React.FC<NavbarProps> = ({ minimal = false }) => {
               }}
             >
           <li
-            className={`mx-4 transition-all duration-300 max-[1020px]:my-4 ${
-              activeLink === "#" ? "scale-[1.3]" : ""
+            className={`mx-3 transition-all duration-300 max-[1020px]:my-4 ${
+              activeLink === "#" ? "scale-[1.1]" : ""
             }`}
           >
             <a
               href="#"
               onClick={() => handleLinkClick("#")}
-              className={`text-white text-xl transition-colors duration-300 hover:text-accent max-[1020px]:!text-white ${
+              className={`text-white text-base transition-colors duration-300 hover:text-accent max-[1020px]:!text-white ${
                 activeLink === "#" ? "!text-accent font-extrabold" : ""
               }`}
             >
               {t("Home")}
             </a>
           </li>
+
           <li
-            className={`mx-4 transition-all duration-300 max-[1020px]:my-4 ${
-              activeLink === "#about-sec" ? "scale-[1.3]" : ""
-            }`}
-          >
-            <a
-              href="#about"
-              onClick={() => handleLinkClick("#about-sec")}
-              className={`text-white text-xl transition-colors duration-300 hover:text-accent max-[1020px]:!text-white ${
-                activeLink === "#about-sec" ? "!text-accent font-extrabold" : ""
-              }`}
-            >
-              {t("About")}
-            </a>
-          </li>
-          <li
-            className={`mx-4 transition-all duration-300 max-[1020px]:my-4 ${
-              activeLink === "#video" ? "scale-[1.3]" : ""
+            className={`mx-3 transition-all duration-300 max-[1020px]:my-4 ${
+              activeLink === "#video" ? "scale-[1.1]" : ""
             }`}
           >
             <a
               href="#services"
               onClick={() => handleLinkClick("#video")}
-              className={`text-white text-xl transition-colors duration-300 hover:text-accent max-[1020px]:!text-white ${
+              className={`text-white text-base transition-colors duration-300 hover:text-accent max-[1020px]:!text-white ${
                 activeLink === "#video" ? "!text-accent font-extrabold" : ""
               }`}
             >
@@ -156,14 +143,14 @@ const Navbar: React.FC<NavbarProps> = ({ minimal = false }) => {
             </a>
           </li>
           <li
-            className={`mx-4 transition-all duration-300 max-[1020px]:my-4 ${
-              activeLink === "#courses" ? "scale-[1.3]" : ""
+            className={`mx-3 transition-all duration-300 max-[1020px]:my-4 ${
+              activeLink === "#courses" ? "scale-[1.1]" : ""
             }`}
           >
             <a
               href="#gallery"
               onClick={() => handleLinkClick("#courses")}
-              className={`text-white text-xl transition-colors duration-300 hover:text-accent max-[1020px]:!text-white ${
+              className={`text-white text-base transition-colors duration-300 hover:text-accent max-[1020px]:!text-white ${
                 activeLink === "#courses" ? "!text-accent font-extrabold" : ""
               }`}
             >
@@ -171,14 +158,14 @@ const Navbar: React.FC<NavbarProps> = ({ minimal = false }) => {
             </a>
           </li>
           <li
-            className={`mx-4 transition-all duration-300 max-[1020px]:my-4 ${
-              activeLink === "#testimonials" ? "scale-[1.3]" : ""
+            className={`mx-3 transition-all duration-300 max-[1020px]:my-4 ${
+              activeLink === "#testimonials" ? "scale-[1.1]" : ""
             }`}
           >
             <a
               href="#testimonials"
               onClick={() => handleLinkClick("#testimonials")}
-              className={`text-white text-xl transition-colors duration-300 hover:text-accent max-[1020px]:!text-white ${
+              className={`text-white text-base transition-colors duration-300 hover:text-accent max-[1020px]:!text-white ${
                 activeLink === "#testimonials"
                   ? "!text-accent font-extrabold"
                   : ""
@@ -187,25 +174,33 @@ const Navbar: React.FC<NavbarProps> = ({ minimal = false }) => {
               {t("Testimonials")}
             </a>
           </li>
-          <li
-            className={`mx-4 transition-all duration-300 max-[1020px]:my-4 ${
-              activeLink === "#contact" ? "scale-[1.3]" : ""
-            }`}
-          >
-            <a
-              href="#contact"
-              onClick={() => handleLinkClick("#contact")}
-              className={`text-white text-xl transition-colors duration-300 hover:text-accent max-[1020px]:!text-white ${
-                activeLink === "#contact" ? "!text-accent font-extrabold" : ""
+    
+          <li className="mx-3 transition-all duration-300 max-[1020px]:my-4">
+            <Link
+              to="/workshops"
+              onClick={() => setMenuOpen(false)}
+              className={`text-white text-base transition-colors duration-300 hover:text-accent max-[1020px]:!text-white ${
+                location.pathname === "/workshops" ? "!text-accent font-extrabold" : ""
               }`}
             >
-              {t("Contact")}
-            </a>
+              {t("Workshops")}
+            </Link>
+          </li>
+          <li className="mx-3 transition-all duration-300 max-[1020px]:my-4">
+            <Link
+              to="/courses"
+              onClick={() => setMenuOpen(false)}
+              className={`text-white text-base transition-colors duration-300 hover:text-accent max-[1020px]:!text-white ${
+                location.pathname === "/courses" ? "!text-accent font-extrabold" : ""
+              }`}
+            >
+              {t("Courses")}
+            </Link>
           </li>
 
           {/* Language Toggle (Inside menu for mobile) */}
           <h3
-            className="hidden max-[1020px]:!flex text-main text-xl items-center gap-[10px] cursor-pointer transition-all duration-300 hover:!text-accent"
+            className="hidden max-[1020px]:!flex text-main text-base items-center gap-[10px] cursor-pointer transition-all duration-300 hover:!text-accent"
             onClick={toggleLanguage}
           >
             {currentLang === "ar" ? "الإنجليزية" : "Arabic"}
@@ -223,7 +218,7 @@ const Navbar: React.FC<NavbarProps> = ({ minimal = false }) => {
 
         {/* Language Toggle (Desktop / always visible) */}
         <h3
-          className={`text-white text-xl flex justify-center items-center gap-[10px] cursor-pointer transition-all duration-300 hover:!text-accent ${!minimal ? 'max-[1020px]:!hidden' : ''}`}
+          className={`text-white text-base flex justify-center items-center gap-[10px] cursor-pointer transition-all duration-300 hover:!text-accent ${!minimal ? 'max-[1020px]:!hidden' : ''}`}
           onClick={toggleLanguage}
         >
           {currentLang === "ar" ? "الإنجليزية" : "Arabic"}
