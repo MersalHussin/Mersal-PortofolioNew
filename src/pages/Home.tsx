@@ -22,12 +22,12 @@ style={{
   backgroundImage: "radial-gradient(circle, #082277, #07195200), url('./assets/Photos/HeroBG.svg')",
 }}
       >
-        <div className="max-w-[1200px] w-full flex justify-center lg:justify-between items-center">
+        <div className="scale-[0.7] sm:scale-100 max-w-[1000px] mx-auto w-full flex justify-center lg:justify-center items-center">
           <img src="/assets/Photos/MersaHero.png" className="lg:max-w-[500px] xl:max-w-[650px] hidden lg:block " alt="" />
           
           <div className="text">
           <h2 className="text-xl mb-4 opacity-80">{t("welcome")}</h2>
-          <h1 className="text-[150px] max-sm:text-[100px] font-black text-accent -my-[70px] max-sm:-my-[30px]">
+          <h1 className="text-[150px] ] font-black text-accent -my-[70px] ">
             {t("mersal")}
           </h1>
           <div className="-mt-[10px] flex justify-center items-center relative right-[10px]" style={{ direction: "ltr" }}>

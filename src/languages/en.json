@@ -1,0 +1,16 @@
+{
+  "Workshops": "Workshops",
+  "workshops": {
+    "title": "Workshops",
+    "description": "Specialized workshops in design and development with trainee reviews",
+    "backHome": "Back to Home",
+    "totalWorkshops": "Workshops",
+    "totalAttendees": "Attendees",
+    "totalReviews": "Reviews",
+    "selectWorkshop": "Select a Workshop",
+    "reviewsFor": "Reviews for",
+    "reviews": "Reviews",
+    "attendees": "Attendees",
+    "noReviews": "No reviews yet"
+  }
+}
