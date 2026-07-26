@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabase';
 import ProjectsManager from '../components/Admin/ProjectsManager';
+import SkillsManager from '../components/Admin/SkillsManager';
 import { LogOut } from 'lucide-react';
 
 const Admin: React.FC = () => {
@@ -11,6 +12,8 @@ const Admin: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [authError, setAuthError] = useState('');
+
+  const [activeTab, setActiveTab] = useState<'projects' | 'skills'>('projects');
 
   useEffect(() => {
     // Check active session
@@ -139,7 +142,22 @@ const Admin: React.FC = () => {
       </div>
 
       <div className="max-w-[1400px] mx-auto px-6 pt-10">
-        <ProjectsManager />
+        <div className="flex gap-4 mb-8">
+          <button 
+            onClick={() => setActiveTab('projects')}
+            className={`px-6 py-3 rounded-xl font-bold transition-all ${activeTab === 'projects' ? 'bg-accent text-main-dark shadow-lg shadow-accent/20' : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/5'}`}
+          >
+            Manage Projects
+          </button>
+          <button 
+            onClick={() => setActiveTab('skills')}
+            className={`px-6 py-3 rounded-xl font-bold transition-all ${activeTab === 'skills' ? 'bg-accent text-main-dark shadow-lg shadow-accent/20' : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/5'}`}
+          >
+            Manage Skills
+          </button>
+        </div>
+
+        {activeTab === 'projects' ? <ProjectsManager /> : <SkillsManager />}
       </div>
     </div>
   );

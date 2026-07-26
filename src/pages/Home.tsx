@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import Marquee from "react-fast-marquee";
@@ -9,9 +9,24 @@ import Testimonials from "../components/Testimonials";
 import Footer from "../components/Footer";
 import Clients from "../components/Clients";
 import Map from "../components/Map";
+import { supabase } from "../lib/supabase";
 
 const Home: React.FC = () => {
   const { t } = useTranslation();
+  const [skills, setSkills] = useState<any[]>([]);
+
+  useEffect(() => {
+    const fetchSkills = async () => {
+      const { data } = await supabase
+        .from('skills')
+        .select('*')
+        .order('created_at', { ascending: true });
+      if (data) {
+        setSkills(data);
+      }
+    };
+    fetchSkills();
+  }, []);
 
   return (
     <>
@@ -99,22 +114,22 @@ style={{
       </section>
 
       {/* Skills Marquee */}
-      <section className="w-full bg-main-dark py-5 border-y-[5px] border-accent">
-        <Marquee speed={60} gradient={false}>
-          <img src="/assets/Photos/apps/ai.webp" alt="Adobe Illustrator" className="w-20 2xl:w-[110px] h-auto mx-5 grayscale hover:grayscale-0 transition-all duration-300" />
-          <img src="/assets/Photos/apps/ps.webp" alt="Adobe Photoshop" className="w-20 2xl:w-[110px] h-auto mx-5 grayscale hover:grayscale-0 transition-all duration-300" />
-          <img src="/assets/Photos/apps/id.webp" alt="Adobe InDesign" className="w-20 2xl:w-[110px] h-auto mx-5 grayscale hover:grayscale-0 transition-all duration-300" />
-          <img src="/assets/Photos/apps/ae.webp" alt="Adobe After Effects" className="w-20 2xl:w-[110px] h-auto mx-5 grayscale hover:grayscale-0 transition-all duration-300" />
-          <img src="/assets/Photos/apps/pr.webp" alt="Adobe Premiere Pro" className="w-20 2xl:w-[110px] h-auto mx-5 grayscale hover:grayscale-0 transition-all duration-300" />
-          <img src="/assets/Photos/apps/canva.webp" alt="Canva" className="w-20 2xl:w-[110px] h-auto mx-5 grayscale hover:grayscale-0 transition-all duration-300" />
-          <img src="/assets/Photos/apps/miro.webp" alt="Miro" className="w-20 2xl:w-[110px] h-auto mx-5 grayscale hover:grayscale-0 transition-all duration-300" />
-          <img src="/assets/Photos/apps/xd.webp" alt="Adobe XD" className="w-20 2xl:w-[110px] h-auto mx-5 grayscale hover:grayscale-0 transition-all duration-300" />
-          <img src="/assets/Photos/apps/figma.webp" alt="Figma" className="w-[60px] 2xl:w-[110px] h-auto mx-5 grayscale hover:grayscale-0 transition-all duration-300" />
-          <img src="/assets/Photos/apps/html.webp" alt="HTML" className="w-20 2xl:w-[110px] h-auto mx-5 grayscale hover:grayscale-0 transition-all duration-300" />
-          <img src="/assets/Photos/apps/css.webp" alt="CSS" className="w-20 2xl:w-[110px] h-auto mx-5 grayscale hover:grayscale-0 transition-all duration-300" />
-          <img src="/assets/Photos/apps/js.webp" alt="JavaScript" className="w-20 2xl:w-[110px] h-auto mx-5 grayscale hover:grayscale-0 transition-all duration-300" />
-          <img src="/assets/Photos/apps/react.webp" alt="React" className="w-20 2xl:w-[110px] h-auto mx-5 grayscale hover:grayscale-0 transition-all duration-300" />
-        </Marquee>
+      <section className="w-full bg-main-dark py-5 border-y-[5px] border-accent min-h-[100px]">
+        {skills.length > 0 ? (
+          <Marquee speed={60} gradient={false}>
+            {skills.map((skill: any) => (
+              <img 
+                key={skill.id}
+                src={skill.image} 
+                alt={skill.name} 
+                title={skill.name}
+                className="w-20 2xl:w-[110px] h-auto mx-5 grayscale hover:grayscale-0 transition-all duration-300" 
+              />
+            ))}
+          </Marquee>
+        ) : (
+          <div className="text-center text-gray-500 text-sm">Loading skills...</div>
+        )}
       </section>
 
       {/* Services */}
