@@ -4,6 +4,7 @@ import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Workshops from "./pages/Workshops";
 import Courses from "./pages/Courses";
+import Admin from "./pages/Admin";
 import Navbar from "./components/Navbar";
 
 function AppContent() {
@@ -19,6 +20,7 @@ function AppContent() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/workshops" element={<Workshops />} />
         <Route path="/courses" element={<Courses />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
     </div>
   );

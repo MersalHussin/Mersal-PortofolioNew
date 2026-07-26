@@ -1,8 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { allProjects, categories, ProjectItem } from "../data/projects";
 import Footer from "../components/Footer";
+import { supabase } from "../lib/supabase";
+
+interface ProjectItem {
+  id: string;
+  name: string;
+  image: string;
+  link: string;
+  category: string;
+  featured: boolean;
+}
+
+const categories = ["All", "Graphic Design", "Web Development", "UI/UX Design", "Video Editing"];
 
 const ProjectCard: React.FC<{ item: ProjectItem; t: (key: string) => string }> = ({ item, t }) => (
   <a
@@ -49,6 +60,22 @@ const ProjectCard: React.FC<{ item: ProjectItem; t: (key: string) => string }> =
 const Projects: React.FC = () => {
   const { t } = useTranslation();
   const [activeFilter, setActiveFilter] = useState("All");
+  const [allProjects, setAllProjects] = useState<ProjectItem[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      const { data } = await supabase
+        .from('projects')
+        .select('*')
+        .order('created_at', { ascending: false });
+      
+      setAllProjects(data || []);
+      setLoading(false);
+    };
+
+    fetchProjects();
+  }, []);
 
   const filteredProjects = activeFilter === "All" 
     ? allProjects 
@@ -114,11 +141,17 @@ const Projects: React.FC = () => {
 
       {/* Projects Grid */}
       <div className="container mx-auto px-4 pb-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {filteredProjects.map((item, idx) => (
-            <ProjectCard key={idx} item={item} t={t} />
-          ))}
-        </div>
+        {loading ? (
+          <div className="text-center py-20 text-white text-xl">Loading projects...</div>
+        ) : filteredProjects.length === 0 ? (
+          <div className="text-center py-20 text-gray-400 text-xl">No projects found.</div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {filteredProjects.map((item, idx) => (
+              <ProjectCard key={item.id || idx} item={item} t={t} />
+            ))}
+          </div>
+        )}
       </div>
 
       <Footer />

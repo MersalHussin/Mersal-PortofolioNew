@@ -189,7 +189,7 @@ const resources = {
       // Hero Section
       mersal: "مــرســال",
       welcome: "أهلًا بيك في موقعي الشخصي ",
-      fireTheWorld: "روح ولع الدنيا",
+      fireTheWorld: " ولــــــــــــــــــع الدنيا",
       downloadCV: " السيرة الذاتية",
       aboutMe: "من أنا",
       aboutText:

@@ -23,7 +23,6 @@ style={{
 }}
       >
         <div className="scale-[0.7] sm:scale-100 max-w-[1000px] mx-auto w-full flex justify-center lg:justify-center items-center">
-          <img src="/assets/Photos/MersaHero.png" className="lg:max-w-[500px] xl:max-w-[650px] hidden lg:block " alt="" />
           
           <div className="text">
           <h2 className="text-xl mb-4 opacity-80">{t("welcome")}</h2>
@@ -63,11 +62,20 @@ style={{
 
       {/* About Section */}
       <section className="py-[60px] px-5 flex justify-center items-center" id="about">
-        <div className="max-w-[800px] w-full">
-          <div className="flex items-center justify-between gap-10 max-md:flex-col max-md:text-center">
-            <div className="flex-1 text-white text-left max-md:text-center">
-              <h2 className="section-title">{t("aboutMe")}</h2>
-              <p className="text-xl leading-relaxed opacity-90 text-start" dir="auto">
+        <div className="max-w-[1200px] w-full">
+          <div className="flex items-center justify-between gap-12 max-lg:flex-col max-lg:text-center">
+            <div className="mx-auto lg:mx-0 w-[220px] sm:w-[280px] lg:w-[380px] flex-shrink-0 mb-8 lg:mb-0">
+              <div className="rounded-full overflow-hidden border-[6px] border-accent/30 bg-main-dark shadow-2xl transition-all duration-300 hover:border-accent hover:-translate-y-2 hover:shadow-[0_15px_40px_-10px_rgba(63,211,87,0.4)] aspect-square">
+                <img 
+                  src="/assets/Photos/mersal.jpg" 
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" 
+                  alt="Mersal" 
+                />
+              </div>
+            </div>
+            <div className="flex-1 text-white text-left max-lg:text-center">
+              <h2 className="section-title max-lg:mx-auto">{t("aboutMe")}</h2>
+              <p className="text-xl leading-relaxed opacity-90 text-start max-lg:text-center" dir="auto">
                 {t("aboutText")}
               </p>
               <div className="pt-5 flex justify-center gap-5 items-center" style={{ direction: "ltr" }}>

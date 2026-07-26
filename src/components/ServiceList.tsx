@@ -44,33 +44,32 @@ const ServiceList: React.FC = () => {
   ];
 
   return (
-    <div className="flex justify-center max-w-[1280px] mx-auto items-center flex-wrap gap-[30px]">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1280px] mx-auto px-5">
       {services.map((service, index) => (
         <div
-          className="w-[380px] max-sm:w-[300px] p-5 bg-main rounded-[10px] text-center transition-all duration-300 border-2 border-main-dark text-lg hover:bg-main-dark hover:border-accent"
+          className="group flex flex-col items-center justify-start p-8 bg-main-dark/80 rounded-[24px] text-center transition-all duration-500 border-2 border-white/5 hover:border-accent hover:-translate-y-3 hover:bg-main-dark relative overflow-hidden"
           style={{
-            boxShadow: "7px 7px 0px 1px #00134E",
-          }}
-          onMouseEnter={(e) => {
-            (e.currentTarget as HTMLDivElement).style.boxShadow =
-              "-7px -7px 0px 1px #3FD357";
-          }}
-          onMouseLeave={(e) => {
-            (e.currentTarget as HTMLDivElement).style.boxShadow =
-              "7px 7px 0px 1px #00134E";
+            boxShadow: "0 15px 35px -15px rgba(0,0,0,0.6)",
           }}
           key={index}
         >
-          <lord-icon
-            src={service.src}
-            trigger="hover"
-            colors="primary:#ffffff,secondary:#3fd357"
-            style={{ width: "150px", height: "150px" }}
-          />
-          <h2 className="text-accent font-black text-[25px]">
+          {/* Subtle gradient overlay on hover */}
+          <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+          
+          <div className="bg-main/40 pt-4 rounded-full mb-1 group-hover:scale-110 transition-transform duration-500 shadow-inner">
+            <lord-icon
+              src={service.src}
+              trigger="hover"
+              colors="primary:#ffffff,secondary:#3fd357"
+              style={{ width: "120px", height: "120px" }}
+            />
+          </div>
+          <h2 className="text-white group-hover:text-accent transition-colors duration-300 font-bold text-[24px] mb-4">
             {service.title}
           </h2>
-          {/* <p className="text-white">{service.text}</p> */}
+          <p className="text-gray-300/80 text-[15px] leading-relaxed group-hover:text-white transition-colors duration-300">
+            {service.text}
+          </p>
         </div>
       ))}
     </div>

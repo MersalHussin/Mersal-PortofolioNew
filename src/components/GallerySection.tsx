@@ -1,8 +1,17 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
-import { featuredProjects, ProjectItem } from "../data/projects";
+import { supabase } from "../lib/supabase";
+
+interface ProjectItem {
+  id: string;
+  name: string;
+  image: string;
+  link: string;
+  category: string;
+  featured: boolean;
+}
 
 const ProjectCard: React.FC<{ item: ProjectItem; t: (key: string) => string }> = ({ item, t }) => (
   <a
@@ -47,11 +56,28 @@ const ProjectCard: React.FC<{ item: ProjectItem; t: (key: string) => string }> =
 
 const GallerySection: React.FC = () => {
   const { t } = useTranslation();
+  const [featuredProjects, setFeaturedProjects] = useState<ProjectItem[]>([]);
+  const [loading, setLoading] = useState(true);
   
   const row1Ref = useRef<HTMLDivElement>(null);
   const row2Ref = useRef<HTMLDivElement>(null);
   const tl1Ref = useRef<gsap.core.Tween | null>(null);
   const tl2Ref = useRef<gsap.core.Tween | null>(null);
+
+  useEffect(() => {
+    const fetchFeaturedProjects = async () => {
+      const { data } = await supabase
+        .from('projects')
+        .select('*')
+        .eq('featured', true)
+        .order('created_at', { ascending: false });
+      
+      setFeaturedProjects(data || []);
+      setLoading(false);
+    };
+
+    fetchFeaturedProjects();
+  }, []);
 
   // Split featured projects into two rows
   const midPoint = Math.ceil(featuredProjects.length / 2);
@@ -85,6 +111,8 @@ const GallerySection: React.FC = () => {
 
   // GSAP infinite scroll animation
   useEffect(() => {
+    if (loading) return;
+    
     if (tl1Ref.current) tl1Ref.current.kill();
     if (tl2Ref.current) tl2Ref.current.kill();
 
@@ -117,7 +145,11 @@ const GallerySection: React.FC = () => {
       if (tl1Ref.current) tl1Ref.current.kill();
       if (tl2Ref.current) tl2Ref.current.kill();
     };
-  }, [row1.length, row2.length]);
+  }, [row1.length, row2.length, loading]);
+
+  if (loading) {
+    return <div className="py-20 text-center text-white">Loading projects...</div>;
+  }
 
   return (
     <>
