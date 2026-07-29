@@ -60,10 +60,15 @@ const Navbar: React.FC<NavbarProps> = ({ minimal = false }) => {
     setMenuOpen(false);
   };
 
+  useEffect(() => {
+    document.documentElement.dir = currentLang === "ar" ? "rtl" : "ltr";
+  }, [currentLang]);
+
   const toggleLanguage = () => {
     const newLang = currentLang === "ar" ? "en" : "ar";
     i18n.changeLanguage(newLang);
     setCurrentLang(newLang);
+    document.documentElement.dir = newLang === "ar" ? "rtl" : "ltr";
   };
 
   return (
@@ -72,9 +77,9 @@ const Navbar: React.FC<NavbarProps> = ({ minimal = false }) => {
       <header className={`fixed top-0 w-full h-[90px] text-white z-[1000] flex justify-between items-center px-[100px] max-[700px]:px-10 transition-all duration-300 ${scrolled || minimal ? 'bg-main/95 backdrop-blur-md shadow-[0_2px_15px_rgba(0,0,0,0.3)]' : 'bg-transparent'}`}>
         <Link to="/" className="logo">
           <img
-            src="/assets/Photos/Logo Mersal Nav.svg"
+            src="/assets/Photos/Mersal-wide-logo.svg"
             alt="Mersal-Logo"
-            className="w-[50px] mt-[10px] p-[2px]"
+            className="w-[120px] mt-[5px]"
           />
         </Link>
 
@@ -176,15 +181,17 @@ const Navbar: React.FC<NavbarProps> = ({ minimal = false }) => {
           </li>
     
           <li className="mx-3 transition-all duration-300 max-[1020px]:my-4">
-            <Link
-              to="/workshops"
-              onClick={() => setMenuOpen(false)}
+            <a
+              href="#workshops"
+              onClick={() => handleLinkClick("#workshops")}
               className={`text-white text-base transition-colors duration-300 hover:text-accent max-[1020px]:!text-white ${
-                location.pathname === "/workshops" ? "!text-accent font-extrabold" : ""
+                activeLink === "#workshops"
+                  ? "!text-accent font-extrabold"
+                  : ""
               }`}
             >
               {t("Workshops")}
-            </Link>
+            </a>
           </li>
           <li className="mx-3 transition-all duration-300 max-[1020px]:my-4">
             <Link

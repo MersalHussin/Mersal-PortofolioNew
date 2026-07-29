@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabase';
 import ProjectsManager from '../components/Admin/ProjectsManager';
 import SkillsManager from '../components/Admin/SkillsManager';
+import ClientsManager from '../components/Admin/ClientsManager';
 import { LogOut } from 'lucide-react';
 
 const Admin: React.FC = () => {
@@ -13,7 +14,7 @@ const Admin: React.FC = () => {
   const [password, setPassword] = useState('');
   const [authError, setAuthError] = useState('');
 
-  const [activeTab, setActiveTab] = useState<'projects' | 'skills'>('projects');
+  const [activeTab, setActiveTab] = useState<'projects' | 'skills' | 'clients'>('projects');
 
   useEffect(() => {
     // Check active session
@@ -155,9 +156,17 @@ const Admin: React.FC = () => {
           >
             Manage Skills
           </button>
+          <button 
+            onClick={() => setActiveTab('clients')}
+            className={`px-6 py-3 rounded-xl font-bold transition-all ${activeTab === 'clients' ? 'bg-accent text-main-dark shadow-lg shadow-accent/20' : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/5'}`}
+          >
+            Manage Clients
+          </button>
         </div>
 
-        {activeTab === 'projects' ? <ProjectsManager /> : <SkillsManager />}
+        {activeTab === 'projects' && <ProjectsManager />}
+        {activeTab === 'skills' && <SkillsManager />}
+        {activeTab === 'clients' && <ClientsManager />}
       </div>
     </div>
   );

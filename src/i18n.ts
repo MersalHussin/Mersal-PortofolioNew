@@ -20,9 +20,10 @@ const resources = {
       welcome: "Hello, Welcome at My Personal Website",
       fireTheWorld: "Fire The World",
       downloadCV: "Download CV",
+      exploreProjects: "Explore Projects",
       aboutMe: "About Me",
       aboutText:
-        "I'm just Mersal, I don't just design, I set things on fire!🔥 From logos to seamless UI/UX and high-impact visuals, I craft experiences that grab attention and leave a mark. Plus, I build the websites to bring it all to life. Let's make something unforgettable!",
+        "I'm Mersal, a MERN Stack Developer who loves to set things on fire!🔥 I build complete and fast web applications. My strong background in Graphic Design and Branding allows me to pay attention to the finest UI/UX details. This unique mix ensures I deliver a final product that not only functions flawlessly but also looks highly professional and grabs attention. Let's make something unforgettable!",
       services: "Services",
       testimonials: "Testimonials",
       certificates: "Certificates",
@@ -191,9 +192,10 @@ const resources = {
       welcome: "أهلًا بيك في موقعي الشخصي ",
       fireTheWorld: " ولــــــــــــــــــع الدنيا",
       downloadCV: " السيرة الذاتية",
+            exploreProjects: "إكتشف المشاريع",
       aboutMe: "من أنا",
       aboutText:
-        "أنا مرسال، مش بس بصمم، لكن بحاول أخليك تولع الدنيا🔥, من أول الشعارات لـ حد تصميمات UI/UX السلسة والتأثيرات البصرية القوية، بعمل تجارب تلفت الانتباه وتترك أثر واضح. لأ ومش بس كده ده ممكن أبنيلك المواقع عشان كل تحول كل ده لواقع. مستني ايه يلا نولع الدنيا ونعمل حاجه متتنسيش",
+        "أنا مرسال، مطور مواقع (MERN Stack)، بحاول دايماً أخليك تولع الدنيا🔥. ببرمج وأبني تطبيقات ويب متكاملة وسريعة، وخلفيتي القوية في الجرافيك ديزاين وتصميم الهويات البصرية بتخليني أهتم بأدق تفاصيل الـ UI/UX. المزيج ده بيخليني أطلعلك منتج نهائي مش بس شغال بكفاءة عالية، لكن كمان شكله احترافي ويلفت الانتباه ويسيب أثر واضح. مستني إيه؟ يلا نولع الدنيا ونعمل حاجة متتنسيش!",
       services: "الخدمات",
       "services-t": "الخدمات",
       testimonials: "آراء أفتخر بها",
