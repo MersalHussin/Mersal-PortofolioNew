@@ -98,108 +98,55 @@ const Navbar: React.FC<NavbarProps> = ({ minimal = false }) => {
               <span className={`bg-accent h-[3px] w-[25px] my-[3px] transition-all duration-300 ${menuOpen ? "!bg-accent" : ""}`} />
             </div>
 
-            {/* Nav Links */}
             <ul
               dir="auto"
               className={`
                 flex transition-all duration-500
-                max-[1020px]:absolute max-[1020px]:top-20 max-[1020px]:right-0 max-[1020px]:flex-col max-[1020px]:w-full max-[1020px]:items-start max-[1020px]:px-10 max-[1020px]:py-5 max-[1020px]:rounded-b-[20px]
+                max-[1020px]:absolute max-[1020px]:top-[90px] max-[1020px]:right-0 max-[1020px]:flex-col max-[1020px]:w-full max-[1020px]:items-center max-[1020px]:px-5 max-[1020px]:py-8 max-[1020px]:rounded-b-3xl max-[1020px]:-z-10 max-[1020px]:shadow-[0_20px_40px_rgba(0,0,0,0.5)] max-[1020px]:border-b-2 max-[1020px]:border-accent/20
                 ${
                   menuOpen
-                    ? "max-[1020px]:translate-y-0 max-[1020px]:opacity-100"
-                    : "max-[1020px]:-translate-y-full max-[1020px]:opacity-0"
+                    ? "max-[1020px]:translate-y-0 max-[1020px]:opacity-100 max-[1020px]:pointer-events-auto"
+                    : "max-[1020px]:-translate-y-[120%] max-[1020px]:opacity-0 max-[1020px]:pointer-events-none"
                 }
               `}
               style={{
                 background:
                   menuOpen
-                    ? "linear-gradient(0deg, #071952, #00134E)"
+                    ? "linear-gradient(180deg, #071952, #00134E)"
                     : undefined,
               }}
             >
-          <li
-            className={`mx-3 transition-all duration-300 max-[1020px]:my-4 ${
-              activeLink === "#" ? "scale-[1.1]" : ""
-            }`}
-          >
-            <a
-              href="#"
-              onClick={() => handleLinkClick("#")}
-              className={`text-white text-base transition-colors duration-300 hover:text-accent max-[1020px]:!text-white ${
-                activeLink === "#" ? "!text-accent font-extrabold" : ""
+          {[ 
+            { label: t("Home"), link: "#", id: "#" },
+            { label: t("Services"), link: "#services", id: "#video" },
+            { label: t("Portfolio"), link: "#gallery", id: "#courses" },
+            { label: t("Testimonials"), link: "#testimonials", id: "#testimonials" },
+            { label: t("Workshops"), link: "#workshops", id: "#workshops" }
+          ].map((item) => (
+            <li
+              key={item.id}
+              className={`mx-3 transition-all duration-300 max-[1020px]:w-full max-[1020px]:my-1 max-[1020px]:mx-0 ${
+                activeLink === item.id ? "scale-[1.1] max-[1020px]:scale-100" : ""
               }`}
             >
-              {t("Home")}
-            </a>
-          </li>
+              <a
+                href={item.link}
+                onClick={() => handleLinkClick(item.id)}
+                className={`text-white text-base max-[1020px]:text-lg max-[1020px]:py-3 max-[1020px]:w-full max-[1020px]:flex max-[1020px]:justify-center max-[1020px]:rounded-xl transition-all duration-300 hover:text-accent max-[1020px]:hover:bg-white/5 ${
+                  activeLink === item.id ? "!text-accent font-extrabold max-[1020px]:bg-white/5" : ""
+                }`}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
 
-          <li
-            className={`mx-3 transition-all duration-300 max-[1020px]:my-4 ${
-              activeLink === "#video" ? "scale-[1.1]" : ""
-            }`}
-          >
-            <a
-              href="#services"
-              onClick={() => handleLinkClick("#video")}
-              className={`text-white text-base transition-colors duration-300 hover:text-accent max-[1020px]:!text-white ${
-                activeLink === "#video" ? "!text-accent font-extrabold" : ""
-              }`}
-            >
-              {t("Services")}
-            </a>
-          </li>
-          <li
-            className={`mx-3 transition-all duration-300 max-[1020px]:my-4 ${
-              activeLink === "#courses" ? "scale-[1.1]" : ""
-            }`}
-          >
-            <a
-              href="#gallery"
-              onClick={() => handleLinkClick("#courses")}
-              className={`text-white text-base transition-colors duration-300 hover:text-accent max-[1020px]:!text-white ${
-                activeLink === "#courses" ? "!text-accent font-extrabold" : ""
-              }`}
-            >
-              {t("Portfolio")}
-            </a>
-          </li>
-          <li
-            className={`mx-3 transition-all duration-300 max-[1020px]:my-4 ${
-              activeLink === "#testimonials" ? "scale-[1.1]" : ""
-            }`}
-          >
-            <a
-              href="#testimonials"
-              onClick={() => handleLinkClick("#testimonials")}
-              className={`text-white text-base transition-colors duration-300 hover:text-accent max-[1020px]:!text-white ${
-                activeLink === "#testimonials"
-                  ? "!text-accent font-extrabold"
-                  : ""
-              }`}
-            >
-              {t("Testimonials")}
-            </a>
-          </li>
-    
-          <li className="mx-3 transition-all duration-300 max-[1020px]:my-4">
-            <a
-              href="#workshops"
-              onClick={() => handleLinkClick("#workshops")}
-              className={`text-white text-base transition-colors duration-300 hover:text-accent max-[1020px]:!text-white ${
-                activeLink === "#workshops"
-                  ? "!text-accent font-extrabold"
-                  : ""
-              }`}
-            >
-              {t("Workshops")}
-            </a>
-          </li>
-          <li className="mx-3 transition-all duration-300 max-[1020px]:my-4">
+          <li className="mx-3 transition-all duration-300 max-[1020px]:w-full max-[1020px]:my-1 max-[1020px]:mx-0">
             <Link
               to="/courses"
               onClick={() => setMenuOpen(false)}
-              className={`text-white text-base transition-colors duration-300 hover:text-accent max-[1020px]:!text-white ${
-                location.pathname === "/courses" ? "!text-accent font-extrabold" : ""
+              className={`text-white text-base max-[1020px]:text-lg max-[1020px]:py-3 max-[1020px]:w-full max-[1020px]:flex max-[1020px]:justify-center max-[1020px]:rounded-xl transition-all duration-300 hover:text-accent max-[1020px]:hover:bg-white/5 ${
+                location.pathname === "/courses" ? "!text-accent font-extrabold max-[1020px]:bg-white/5" : ""
               }`}
             >
               {t("Courses")}
@@ -208,7 +155,7 @@ const Navbar: React.FC<NavbarProps> = ({ minimal = false }) => {
 
           {/* Language Toggle (Inside menu for mobile) */}
           <h3
-            className="hidden max-[1020px]:!flex text-main text-base items-center gap-[10px] cursor-pointer transition-all duration-300 hover:!text-accent"
+            className="hidden max-[1020px]:!flex text-white max-[1020px]:w-full max-[1020px]:justify-center max-[1020px]:py-3 max-[1020px]:rounded-xl max-[1020px]:mt-4 max-[1020px]:bg-accent/10 border border-accent/20 text-lg items-center gap-[10px] cursor-pointer transition-all duration-300 hover:!text-accent hover:bg-accent/20"
             onClick={toggleLanguage}
           >
             {currentLang === "ar" ? "الإنجليزية" : "Arabic"}

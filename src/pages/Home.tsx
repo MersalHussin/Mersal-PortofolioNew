@@ -49,29 +49,29 @@ const Home: React.FC = () => {
     <>
       {/* Hero Section */}
       <section
-        className="min-h-[calc(100vh)]  pt-24 px-5 overflow-hidden flex items-center justify-center bg-cover bg-center bg-no-repeat text-center text-white"
+        className="min-h-[calc(100vh)] pt-8 sm:pt-24 px-5 overflow-hidden flex items-center justify-center bg-cover bg-center bg-no-repeat text-center text-white"
 style={{
   backgroundImage: "radial-gradient(circle, #082277, #07195200), url('./assets/Photos/HeroBG.svg')",
 }}
       >
-        <div className="scale-[0.7] sm:scale-100 max-w-[1000px] mx-auto w-full flex justify-center lg:justify-center items-center">
+        <div className="sm:scale-100 max-w-[1000px] mx-auto w-full flex justify-center lg:justify-center items-center">
           
           <div className="text flex flex-col items-center">
             <div className="w-fit mx-auto flex flex-col ">
-              <p className="text-[16px] sm:text-[20px] mb-10 md:text-[24px] text-start font-black text-white/90 uppercase tracking-widest relative z-10 drop-shadow-md ml-3 rtl:mr-3 rtl:ml-0 top-[25px] sm:top-[35px] md:top-[45px]">
+              <p className="text-[16px] sm:text-[20px] mb-6 sm:mb-10 md:text-[24px] text-start font-black text-white/90 uppercase tracking-widest relative z-10 drop-shadow-md ml-3 rtl:mr-3 rtl:ml-0 top-[10px] sm:top-[35px] md:top-[45px]">
                 {t("welcome")}
               </p>
-              <h1 className="text-[100px] sm:text-[120px] z-0 md:text-[150px] font-black text-accent -my[40px] md:-my[50px] drop-shadow-sm leading-none">
+              <h1 className="text-[90px] sm:text-[120px] z-0 md:text-[150px] font-black text-accent -my[40px] md:-my[50px] drop-shadow-sm leading-none">
                 {t("mersal")}
               </h1>
             </div>
           <div className="flex justify-center items-center">
-            <a href="#about" className="fire-btn mx-3 z-10">
+            <a href="#about" className="fire-btn -mx-1 sm:mx-3 z-10 scale-[.8] sm:scale-[1]">
               {t("fireTheWorld")}
             </a>
             <a
               href="#gallery"
-              className="text-white text-lg opacity-80 font-bold transition-all duration-300 hover:opacity-100 mx-3"
+              className="text-white scale-[.8] sm:scale-[1] text-lg opacity-80 font-bold transition-all duration-300 hover:opacity-100 mx-3"
               >
               {t("exploreProjects")}
             </a>
@@ -114,10 +114,7 @@ style={{
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100" 
                   alt="Mersal" 
                 />
-                
-                {/* Gradient overlay for text readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-main-dark via-main-dark/30 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-70"></div>
-              </div>
+                              </div>
             </div>
               
 
@@ -232,7 +229,7 @@ style={{
           </h1>
           <a
             className="fire-btn  md:w-auto items-center justify-center px-5  py-3 md:py-4 text-lg md:text-xl font-black !bg-white !border-[3px] !border-main !text-main shadow-[6px_6px_0px_#00134E] hover:shadow-[2px_2px_0px_#00134E] hover:translate-y-1 hover:!bg-gradient-to-r hover:!from-[#ff9000] hover:!to-[#ffd900] hover:!text-main hover:!border-transparent transition-all duration-200"
-            href="mailto:hello@mersal.top"
+            href="mailto:hi@mersal.me"
             target="_blank"
             rel="noreferrer"
           >

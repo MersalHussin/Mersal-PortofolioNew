@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
             </h3>
             <div className="flex items-center gap-4 flex-wrap justify-center lg:justify-end">
               {[
-                { name: "Whatsapp", url: "https://wa.me/+201064177298", icon: "/assets/Photos/Social/Whatsapp.svg" },
+                { name: "Whatsapp", url: "https://wa.me/+201150968735", icon: "/assets/Photos/Social/Whatsapp.svg" },
                 { name: "Facebook", url: "https://www.facebook.com/MHMersal", icon: "/assets/Photos/Social/Facebook.svg" },
                 { name: "Linkedin", url: "https://www.linkedin.com/in/mmersal/", icon: "/assets/Photos/Social/Linked-in.svg" },
                 { name: "Github", url: "https://github.com/MersalHussin", icon: "/assets/Photos/Social/Github.svg" },

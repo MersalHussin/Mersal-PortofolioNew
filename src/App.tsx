@@ -23,9 +23,10 @@ function AppContent() {
         await supabase.auth.getSession();
         
         // Add a slight delay for smooth transition and logo visibility
+        // Wait a bit longer to allow components to mount and fetch data
         setTimeout(() => {
           setLoading(false);
-        }, 1200);
+        }, 2500);
       } catch (error) {
         console.error("Error initializing app:", error);
         setLoading(false);
@@ -39,23 +40,22 @@ function AppContent() {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
-  if (loading) {
-    return <Loader />;
-  }
-
   return (
-    <div className="text-center">
-      <Navbar minimal={!isHome} />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/About" element={<About />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/workshops" element={<Workshops />} />
-        <Route path="/courses" element={<Courses />} />
-        <Route path="/admin" element={<Admin />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </div>
+    <>
+      {loading && <Loader />}
+      <div className={`text-center transition-opacity duration-1000 ${loading ? 'opacity-0 h-screen overflow-hidden' : 'opacity-100'}`}>
+        <Navbar minimal={!isHome} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/workshops" element={<Workshops />} />
+          <Route path="/courses" element={<Courses />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </div>
+    </>
   );
 }
 
