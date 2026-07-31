@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
+import OptimizedImage from "./OptimizedImage";
 
 interface SectionDef {
   link: string;
@@ -76,7 +77,7 @@ const Navbar: React.FC<NavbarProps> = ({ minimal = false }) => {
       {/* <div className="h-20" /> */}
       <header className={`fixed top-0 w-full h-[90px] text-white z-[1000] flex justify-between items-center px-[100px] max-[700px]:px-10 transition-all duration-300 ${scrolled || minimal ? 'bg-main/95 backdrop-blur-md shadow-[0_2px_15px_rgba(0,0,0,0.3)]' : 'bg-transparent'}`}>
         <Link to="/" className="logo">
-          <img
+          <OptimizedImage
             src={currentLang === "ar" ? "/assets/Photos/Mersal-ar-wide-logo.svg" : "/assets/Photos/Mersal-wide-logo.svg"}
             alt="Mersal-Logo"
             className="w-[120px] mt-[5px]"

@@ -34,4 +34,4 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./build/ # لو شغال React Vite سيبها dist، لو Create React App غيرها لـ ./build/
-          server-dir: ./public_html/
+          server-dir: ./domains/mersal.me/public_html/

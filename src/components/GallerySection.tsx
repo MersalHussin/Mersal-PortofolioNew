@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { supabase } from "../lib/supabase";
+import OptimizedImage from "./OptimizedImage";
 
 interface ProjectItem {
   id: string;
@@ -29,9 +30,11 @@ const ProjectCard: React.FC<{ item: ProjectItem; t: (key: string) => string }> =
       (e.currentTarget as HTMLAnchorElement).style.boxShadow = "-4px -4px 0px 1px #00134E";
     }}
   >
-    <img
+    <OptimizedImage
       src={item.image}
       alt={item.name}
+      quality={70}
+      width={600}
       className="w-full h-full object-cover rounded-xl transition-all duration-500 scale-105 group-hover:blur-sm group-hover:scale-110 group-hover:opacity-20"
     />
     <div
@@ -42,7 +45,7 @@ const ProjectCard: React.FC<{ item: ProjectItem; t: (key: string) => string }> =
     >
       <lord-icon
         src="https://cdn.lordicon.com/wsbmifnf.json"
-        trigger="loop"
+        trigger="hover"
         colors="primary:#3fd357,secondary:#3fd357"
         style={{ width: "50px", height: "50px" }}
       />
@@ -121,23 +124,25 @@ const GallerySection: React.FC = () => {
 
     if (row1El && row1.length > 0) {
       const totalWidth = row1El.scrollWidth / 2;
-      gsap.set(row1El, { x: 0 });
+      gsap.set(row1El, { x: 0, force3D: true });
       tl1Ref.current = gsap.to(row1El, {
         x: -totalWidth,
         duration: row1.length * 4,
         ease: "none",
         repeat: -1,
+        force3D: true,
       });
     }
 
     if (row2El && row2.length > 0) {
       const totalWidth = row2El.scrollWidth / 2;
-      gsap.set(row2El, { x: -totalWidth });
+      gsap.set(row2El, { x: -totalWidth, force3D: true });
       tl2Ref.current = gsap.to(row2El, {
         x: 0,
         duration: row2.length * 4.5,
         ease: "none",
         repeat: -1,
+        force3D: true,
       });
     }
 

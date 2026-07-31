@@ -41,13 +41,14 @@ const Certificates: React.FC = () => {
             
             // Animate card when it comes into view
             gsap.fromTo(entry.target,
-              { opacity: 0, y: 50, scale: 0.9 },
+              { opacity: 0, y: 50, scale: 0.9, force3D: true },
               { 
                 opacity: 1, 
                 y: 0, 
                 scale: 1,
                 duration: 0.6,
-                ease: "back.out(1.4)"
+                ease: "back.out(1.4)",
+                force3D: true
               }
             );
             

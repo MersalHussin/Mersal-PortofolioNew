@@ -149,20 +149,22 @@ const ScrollColumn: React.FC<{
       const totalHeight = columnEl.scrollHeight / 2;
       
       if (direction === "up") {
-        gsap.set(columnEl, { y: 0 });
+        gsap.set(columnEl, { y: 0, force3D: true });
         tweenRef.current = gsap.to(columnEl, {
           y: -totalHeight,
           duration: speed,
           ease: "none",
           repeat: -1,
+          force3D: true,
         });
       } else {
-        gsap.set(columnEl, { y: -totalHeight });
+        gsap.set(columnEl, { y: -totalHeight, force3D: true });
         tweenRef.current = gsap.to(columnEl, {
           y: 0,
           duration: speed,
           ease: "none",
           repeat: -1,
+          force3D: true,
         });
       }
     }

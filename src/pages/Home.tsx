@@ -109,7 +109,7 @@ style={{
               <div className="absolute inset-0 rounded-[2.5rem] border-[3px] border-accent/20 rotate-6 transition-all duration-700 group-hover:rotate-12 group-hover:border-accent/60 z-0 scale-[1.02]"></div>
               <div className="absolute inset-0 rounded-[2.5rem] border-[3px] border-accent/20 -rotate-3 transition-all duration-700 group-hover:-rotate-6 group-hover:border-accent/40 z-0 scale-[1.02]"></div>
               <div className="relative z-10 rounded-[2.5rem] overflow-hidden bg-main-dark/80 backdrop-blur-sm border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-500 group-hover:-translate-y-4 group-hover:shadow-[0_20px_50px_rgba(63,211,87,0.3)] aspect-[4/5]">
-                <img 
+                <OptimizedImage 
                   src="/assets/Photos/mersal.jpg" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100" 
                   alt="Mersal" 
