@@ -1,0 +1,37 @@
+name: Deploy React App to Hostinger
+
+on:
+  push:
+    branches:
+      - main # لو اسم الفرع الرئيسي عندك master غيرها لـ master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. جلب الكود من GitHub
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. إعداد Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # 3. تثبيت المكتبات وعمل Build للمشروع
+      - name: Install dependencies and Build
+        run: |
+          npm install
+          npm run build
+
+      # 4. رفع ملفات الـ Build فقط إلى هوستينجر
+      - name: Sync files to Hostinger
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./dist/ # لو شغال React Vite سيبها dist، لو Create React App غيرها لـ ./build/
+          server-dir: ./public_html/
