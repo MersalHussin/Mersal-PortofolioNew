@@ -170,7 +170,7 @@ style={{
       </section>
 
       {/* Skills Marquee */}
-      <section className="w-full bg-main-dark py-5 border-y-[5px] border-accent min-h-[100px]">
+      <section className="w-full bg-main-dark py-5 border-y-[5px] border-accent min-h-[100px]" dir="ltr">
         {skills.length > 0 ? (
           <Marquee speed={60} gradient={false}>
             {skills.map((skill: any) => (

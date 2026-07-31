@@ -11,6 +11,8 @@ import Loader from "./components/Loader";
 import { supabase } from "./lib/supabase";
 import { useState, useEffect } from "react";
 
+import TestimonialsPage from "./pages/TestimonialsPage";
+
 function AppContent() {
   const location = useLocation();
   const isHome = location.pathname === "/";
@@ -51,6 +53,7 @@ function AppContent() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/workshops" element={<Workshops />} />
           <Route path="/courses" element={<Courses />} />
+          <Route path="/testimonials" element={<TestimonialsPage />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

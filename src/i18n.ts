@@ -26,6 +26,7 @@ const resources = {
         "I'm Mersal, a passionate MERN Stack Developer dedicated to crafting impactful digital experiences. By blending high-performance web development with a strong foundation in Graphic Design and Branding, I strive to deliver solutions that are both technically robust and visually engaging. I pay close attention to every UI/UX detail, ensuring that each project not only functions flawlessly but also truly resonates with its audience. Let's collaborate to build something remarkable.",
       services: "Services",
       testimonials: "Testimonials",
+      "testimonials-viewAll": "Read All Testimonials",
       certificates: "Certificates",
       ctaText: "Just take a step to \n Fire The World",
       ctaButton: "Let's Fire The World",
@@ -55,7 +56,7 @@ const resources = {
         },
       },
       projects: {
-        title: "All Projects",
+        title: "Projects",
         description: "Explore all my creative work across different categories - from graphic design to web development and beyond.",
         backHome: "Back to Home",
       },
@@ -199,6 +200,7 @@ const resources = {
       services: "الخدمات",
       "services-t": "الخدمات",
       testimonials: "آراء أفتخر بها",
+      "testimonials-viewAll": "قراءة كل الآراء",
       certificates: "الشهادات",
       ctaText: "انت بس خد الخطوة إنك  تولع الدنيا",
       ctaButton: "يلا نولع الدنيا",
@@ -228,7 +230,7 @@ const resources = {
         },
       },
       projects: {
-        title: "جميع المشاريع",
+        title: "المشاريع",
         description: "استكشف جميع أعمالي الإبداعية عبر فئات مختلفة - من تصميم الجرافيك إلى تطوير الويب وما بعدها.",
         backHome: "العودة للرئيسية",
       },
@@ -351,9 +353,11 @@ const resources = {
   },
 };
 
+const savedLanguage = localStorage.getItem("appLanguage") || "en";
+
 i18n.use(initReactI18next).init({
   resources,
-  lng: "en",
+  lng: savedLanguage,
   interpolation: {
     escapeValue: false,
   },

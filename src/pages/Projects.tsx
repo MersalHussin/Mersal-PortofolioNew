@@ -105,9 +105,6 @@ const Projects: React.FC = () => {
           <h1 className="text-[80px] max-sm:text-[50px] font-black text-accent leading-none mb-4">
             {t("projects.title")}
           </h1>
-          <p className="text-white/70 text-xl max-w-[600px] mx-auto">
-            {t("projects.description")}
-          </p>
         </div>
       </section>
 

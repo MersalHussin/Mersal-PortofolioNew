@@ -161,7 +161,7 @@ const GallerySection: React.FC = () => {
       <h1 className="section-title">{t("gallery.title")}</h1>
 
       {/* GSAP Auto-scrolling Projects */}
-      <div className="space-y-6 py-4 overflow-hidden">
+      <div className="space-y-6 py-4 overflow-hidden" dir="ltr">
         {/* Row 1 - Right to Left */}
         <div 
           className="relative overflow-hidden"

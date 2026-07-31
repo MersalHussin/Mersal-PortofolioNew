@@ -4,6 +4,7 @@ import ProjectsManager from '../components/Admin/ProjectsManager';
 import SkillsManager from '../components/Admin/SkillsManager';
 import ClientsManager from '../components/Admin/ClientsManager';
 import SettingsManager from '../components/Admin/SettingsManager';
+import TestimonialsManager from '../components/Admin/TestimonialsManager';
 import { LogOut } from 'lucide-react';
 
 const Admin: React.FC = () => {
@@ -15,7 +16,7 @@ const Admin: React.FC = () => {
   const [password, setPassword] = useState('');
   const [authError, setAuthError] = useState('');
 
-  const [activeTab, setActiveTab] = useState<'projects' | 'skills' | 'clients' | 'settings'>('projects');
+  const [activeTab, setActiveTab] = useState<'projects' | 'skills' | 'clients' | 'testimonials' | 'settings'>('projects');
 
   useEffect(() => {
     // Check active session
@@ -164,6 +165,12 @@ const Admin: React.FC = () => {
             Manage Clients
           </button>
           <button 
+            onClick={() => setActiveTab('testimonials')}
+            className={`px-6 py-3 rounded-xl font-bold transition-all ${activeTab === 'testimonials' ? 'bg-accent text-main-dark shadow-lg shadow-accent/20' : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/5'}`}
+          >
+            Testimonials
+          </button>
+          <button 
             onClick={() => setActiveTab('settings')}
             className={`px-6 py-3 rounded-xl font-bold transition-all ${activeTab === 'settings' ? 'bg-accent text-main-dark shadow-lg shadow-accent/20' : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/5'}`}
           >
@@ -174,6 +181,7 @@ const Admin: React.FC = () => {
         {activeTab === 'projects' && <ProjectsManager />}
         {activeTab === 'skills' && <SkillsManager />}
         {activeTab === 'clients' && <ClientsManager />}
+        {activeTab === 'testimonials' && <TestimonialsManager />}
         {activeTab === 'settings' && <SettingsManager />}
       </div>
     </div>

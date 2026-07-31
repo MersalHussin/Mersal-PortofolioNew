@@ -69,6 +69,7 @@ const Navbar: React.FC<NavbarProps> = ({ minimal = false }) => {
     const newLang = currentLang === "ar" ? "en" : "ar";
     i18n.changeLanguage(newLang);
     setCurrentLang(newLang);
+    localStorage.setItem("appLanguage", newLang);
     document.documentElement.dir = newLang === "ar" ? "rtl" : "ltr";
   };
 

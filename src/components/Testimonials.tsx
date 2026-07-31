@@ -1,5 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 interface TestimonialItem {
   name: string;
@@ -8,7 +10,7 @@ interface TestimonialItem {
   text: string;
 }
 
-const testimonials: TestimonialItem[] = [
+export const testimonials: TestimonialItem[] = [
   {
     name: "Eng.Amr Helmi",
     position: "Senior Graphic Designer",
@@ -97,12 +99,12 @@ const TestimonialCard: React.FC<{ item: TestimonialItem }> = ({ item }) => (
       (e.currentTarget as HTMLDivElement).style.boxShadow = "10px 10px 0px #00134E";
     }}
   >
-    <span
+    {/* <span
       className="absolute -top-10 -right-5 text-[60px] text-accent font-black transition-all duration-300 group-hover:text-white group-hover:scale-110"
       style={{ fontFamily: "'Font Awesome 5 Free'" }}
     >
       &#xf10e;
-    </span>
+    </span> */}
     <p className="text-xl max-sm:text-base leading-relaxed p-5 flex justify-center items-center flex-wrap">
       {item.text}
     </p>
@@ -196,6 +198,7 @@ const ScrollColumn: React.FC<{
 
 const Testimonials: React.FC = () => {
   const [columns, setColumns] = useState(3);
+  const { t } = useTranslation();
 
   // Handle responsive columns
   useEffect(() => {
@@ -236,6 +239,24 @@ const Testimonials: React.FC = () => {
             speed={items.length * 8}
           />
         ))}
+      </div>
+      
+      {/* View All Testimonials Button */}
+      <div className="flex justify-center mt-10">
+        <Link
+          to="/testimonials"
+          className="fire-btn group flex items-center gap-3"
+        >
+          <span>{t("testimonials-viewAll")}</span>
+          <svg 
+            className="w-5 h-5 transition-transform group-hover:translate-x-1" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </Link>
       </div>
     </div>
   );
