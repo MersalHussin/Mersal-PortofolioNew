@@ -11,6 +11,7 @@ import Footer from "../components/Footer";
 import Clients from "../components/Clients";
 import Map from "../components/Map";
 import { supabase } from "../lib/supabase";
+import OptimizedImage from "../components/OptimizedImage";
 
 const Home: React.FC = () => {
   const { t } = useTranslation();
@@ -176,12 +177,14 @@ style={{
         {skills.length > 0 ? (
           <Marquee speed={60} gradient={false}>
             {skills.map((skill: any) => (
-              <img 
+              <OptimizedImage 
                 key={skill.id}
                 src={skill.image} 
                 alt={skill.name} 
                 title={skill.name}
-                className="w-20 2xl:w-[110px] h-auto mx-5 grayscale hover:grayscale-0 transition-all duration-300" 
+                width={150}
+                objectFit="contain"
+                className="w-20 2xl:w-[110px] h-20 2xl:h-[110px] mx-5 grayscale hover:grayscale-0 transition-all duration-300 bg-transparent" 
               />
             ))}
           </Marquee>

@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import { supabase } from "../lib/supabase";
+import OptimizedImage from "../components/OptimizedImage";
 
 interface ProjectItem {
   id: string;
@@ -32,10 +33,11 @@ const ProjectCard: React.FC<{ item: ProjectItem; t: (key: string) => string }> =
       (e.currentTarget as HTMLAnchorElement).style.boxShadow = "-4px -4px 0px 1px #00134E";
     }}
   >
-    <img
+    <OptimizedImage
       src={item.image}
       alt={item.name}
-      className="w-full h-full object-cover rounded-xl transition-all duration-500 scale-105 group-hover:blur-sm group-hover:scale-110 group-hover:opacity-20"
+      width={600}
+      className="w-full h-full rounded-xl transition-all duration-500 scale-105 group-hover:blur-sm group-hover:scale-110 group-hover:opacity-20"
     />
     <div
       className="absolute inset-0 flex flex-col items-center justify-center opacity-0 z-10 transition-all duration-500 text-accent group-hover:opacity-100 p-3"

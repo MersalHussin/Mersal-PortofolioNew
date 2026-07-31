@@ -2,6 +2,7 @@ import { t } from "i18next";
 import { useEffect, useState } from "react";
 import staticClients from "../data/clients";
 import { supabase } from "../lib/supabase";
+import OptimizedImage from "./OptimizedImage";
 
 const Clients = () => {
   const [clients, setClients] = useState<any[]>(staticClients);
@@ -33,11 +34,13 @@ const Clients = () => {
   const renderCardContent = (client: (typeof clients)[0]) => (
     <>
       {/* Logo */}
-      <img
+      <OptimizedImage
         src={client.logo}
         alt={client.name}
+        width={200}
+        objectFit="contain"
         className="
-          w-full h-full object-contain
+          w-full h-full bg-transparent
           transition-all duration-400 ease-out
           opacity-50 grayscale
           group-hover:opacity-100 group-hover:grayscale-0
