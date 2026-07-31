@@ -17,13 +17,13 @@ const resources = {
       Courses: "Courses",
       // Hero Section
       mersal: "Mersal",
-      welcome: "Hello, Welcome at My Personal Website",
+      welcome: "Welcome at",
       fireTheWorld: "Fire The World",
       downloadCV: "Download CV",
       exploreProjects: "Explore Projects",
       aboutMe: "About Me",
       aboutText:
-        "I'm Mersal, a MERN Stack Developer who loves to set things on fire!🔥 I build complete and fast web applications. My strong background in Graphic Design and Branding allows me to pay attention to the finest UI/UX details. This unique mix ensures I deliver a final product that not only functions flawlessly but also looks highly professional and grabs attention. Let's make something unforgettable!",
+        "I'm Mersal, a passionate MERN Stack Developer dedicated to crafting impactful digital experiences. By blending high-performance web development with a strong foundation in Graphic Design and Branding, I strive to deliver solutions that are both technically robust and visually engaging. I pay close attention to every UI/UX detail, ensuring that each project not only functions flawlessly but also truly resonates with its audience. Let's collaborate to build something remarkable.",
       services: "Services",
       testimonials: "Testimonials",
       certificates: "Certificates",
@@ -31,8 +31,8 @@ const resources = {
       ctaButton: "Let's Fire The World",
       trustedBy: "Trusted By",
       worldMap: {
-        title: "Honored to Reach",
-        subtitle: "Grateful to have worked with amazing clients across 5 countries",
+        title: "A Journey I Cherish",
+        subtitle: "",
         countries: {
           egypt: "Egypt",
           saudiArabia: "Saudi Arabia",
@@ -105,7 +105,7 @@ const resources = {
         feature3: "Certificates",
       },
       footerText:
-        "If you've made it this far on my site, big props to you, seriously! Honored to have you here, for real. Hope you've taken the step to become an absolute legend to everyone around you and light up the world—so what's up, ready to Fire The World? 🔥",
+        "Thank you for exploring my portfolio. I am always excited to collaborate on innovative projects and bring creative visions to life. If you're ready to build something exceptional and make a lasting impact, let's connect and start our next journey together. 🔥",
       knowMore: "Know More",
       cv: {
         title: "Resume",
@@ -189,13 +189,13 @@ const resources = {
       Courses: "الكورسات",
       // Hero Section
       mersal: "مــرســال",
-      welcome: "أهلًا بيك في موقعي الشخصي ",
+      welcome: "أهلًا بيك في ",
       fireTheWorld: " ولــــــــــــــــــع الدنيا",
       downloadCV: " السيرة الذاتية",
             exploreProjects: "إكتشف المشاريع",
       aboutMe: "من أنا",
       aboutText:
-        "أنا مرسال، مطور مواقع (MERN Stack)، بحاول دايماً أخليك تولع الدنيا🔥. ببرمج وأبني تطبيقات ويب متكاملة وسريعة، وخلفيتي القوية في الجرافيك ديزاين وتصميم الهويات البصرية بتخليني أهتم بأدق تفاصيل الـ UI/UX. المزيج ده بيخليني أطلعلك منتج نهائي مش بس شغال بكفاءة عالية، لكن كمان شكله احترافي ويلفت الانتباه ويسيب أثر واضح. مستني إيه؟ يلا نولع الدنيا ونعمل حاجة متتنسيش!",
+        "أنا مرسال، مطور واجهات ويب متكاملة (MERN Stack) شغوف بصناعة تجارب رقمية مميزة. أجمع بين خبرتي في بناء تطبيقات الويب السريعة والفعالة، وبين خلفيتي في تصميم الجرافيك والهويات البصرية، لأقدم حلولاً تجمع بين الأداء التقني العالي والجمال البصري. أهتم بأدق تفاصيل تجربة المستخدم (UI/UX) لضمان خروج كل مشروع بصورة احترافية تترك أثراً إيجابياً وتلبي تطلعاتك. يسعدني دائماً التعاون لتحويل أفكارك إلى واقع ملموس.",
       services: "الخدمات",
       "services-t": "الخدمات",
       testimonials: "آراء أفتخر بها",
@@ -204,8 +204,8 @@ const resources = {
       ctaButton: "يلا نولع الدنيا",
       trustedBy: "موثوق به من قبل",
       worldMap: {
-        title: "الإحصائيات",
-        subtitle: "ممتن إني اشتغلت مع عملاء مميزين في 5 دول",
+        title: "بصمات أعتز بها",
+        subtitle: "",
         countries: {
           egypt: "مصر",
           saudiArabia: "السعودية",
@@ -278,7 +278,7 @@ const resources = {
         feature3: "شهادات",
       },
       footerText:
-        "لو وصلت لحد النقطة دي من الموقع فـ أنا أُحيك ولله وشرفتني ولله  وياريت تكون أخدت الخطوة وتبقى شخص مشطشط لكل اللي حواليك وتولع الدنيا فـ إيه مش يلا نولع الدنيا 🔥",
+        "شكراً لوصولك إلى هنا واستكشافك لأعمالي. يسعدني دائماً التعاون في مشاريع مبتكرة وتحويل الأفكار الإبداعية إلى واقع ملموس. إذا كنت مستعداً لبناء منتج استثنائي يترك أثراً قوياً، تواصل معي الآن لنبدأ رحلة نجاحنا القادمة. 🔥",
       knowMore: "اعرف أكتر",
       cv: {
         title: "السيرة الذاتية",

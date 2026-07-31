@@ -15,6 +15,7 @@ import { supabase } from "../lib/supabase";
 const Home: React.FC = () => {
   const { t } = useTranslation();
   const [skills, setSkills] = useState<any[]>([]);
+  const [cvLink, setCvLink] = useState<string>("/assets/Photos/Mesal CV.pdf");
 
   useEffect(() => {
     const fetchSkills = async () => {
@@ -26,7 +27,21 @@ const Home: React.FC = () => {
         setSkills(data);
       }
     };
+    
+    const fetchCvLink = async () => {
+      const { data } = await supabase
+        .from('settings')
+        .select('value')
+        .eq('key', 'cv_url')
+        .single();
+      
+      if (data && data.value) {
+        setCvLink(data.value);
+      }
+    };
+
     fetchSkills();
+    fetchCvLink();
   }, []);
 
   return (
@@ -40,18 +55,22 @@ style={{
       >
         <div className="scale-[0.7] sm:scale-100 max-w-[1000px] mx-auto w-full flex justify-center lg:justify-center items-center">
           
-          <div className="text">
-          {/* <h2 className="text-xl mb-4 opacity-80">{t("welcome")}</h2> */}
-          <h1 className="text-[80px] sm:text-[100px] md:text-[120px] font-black text-accent -my-[40px] md:-my-[50px] drop-shadow-sm">
-            {t("mersal")}
-          </h1>
-          <div className="-mt-[10px] flex justify-center items-center relative right-[10px]" style={{ direction: "ltr" }}>
-            <a href="#about" className="fire-btn">
+          <div className="text flex flex-col items-center">
+            <div className="w-fit mx-auto flex flex-col ">
+              <p className="text-[16px] sm:text-[20px] mb-10 md:text-[24px] text-start font-black text-white/90 uppercase tracking-widest relative z-10 drop-shadow-md ml-3 rtl:mr-3 rtl:ml-0 top-[25px] sm:top-[35px] md:top-[45px]">
+                {t("welcome")}
+              </p>
+              <h1 className="text-[100px] sm:text-[120px] z-0 md:text-[150px] font-black text-accent -my[40px] md:-my[50px] drop-shadow-sm leading-none">
+                {t("mersal")}
+              </h1>
+            </div>
+          <div className="flex justify-center items-center">
+            <a href="#about" className="fire-btn mx-3 z-10">
               {t("fireTheWorld")}
             </a>
             <a
               href="#gallery"
-              className="text-white text-lg opacity-80 font-bold transition-all duration-300 hover:opacity-100"
+              className="text-white text-lg opacity-80 font-bold transition-all duration-300 hover:opacity-100 mx-3"
               >
               {t("exploreProjects")}
             </a>
@@ -97,19 +116,6 @@ style={{
                 
                 {/* Gradient overlay for text readability */}
                 <div className="absolute inset-0 bg-gradient-to-t from-main-dark via-main-dark/30 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-70"></div>
-                
-                {/* Floating details block */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 transform translate-y-8 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 flex items-center gap-4">
-                  {/* <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-accent text-main-dark flex items-center justify-center flex-shrink-0 font-bold text-xl shadow-[0_0_20px_rgba(63,211,87,0.5)]">
-                    <svg className="w-6 h-6 sm:w-7 sm:h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                  </div> */}
-                  <div className="text-start flex-1 backdrop-blur-md bg-white/10 border border-white/20 p-3 sm:p-4 rounded-xl">
-                    <h4 className="text-white font-bold text-sm sm:text-base tracking-wide">{t("mersal")}</h4>
-                    <p className="text-accent/90 text-xs sm:text-sm mt-1">{t("services-list.graphic")} & {t("services-list.web")}</p>
-                  </div>
-                </div>
               </div>
             </div>
               
@@ -146,8 +152,10 @@ style={{
                 </div>
                 
                 <a
-                  href="/assets/Photos/Mesal CV.pdf"
+                  href={cvLink}
                   download
+                  target="_blank"
+                  rel="noreferrer"
                   className="group flex items-center gap-4 text-white/80 font-bold text-base sm:text-lg transition-all duration-300 hover:text-accent hover:-translate-y-1"
                 >
                   <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-white/20 flex items-center justify-center transition-all duration-300 group-hover:border-accent group-hover:bg-accent/10 group-hover:shadow-[0_0_20px_rgba(63,211,87,0.2)]">

@@ -84,7 +84,7 @@ const Projects: React.FC = () => {
   return (
     <div className="min-h-screen bg-main">
       {/* Hero Header */}
-      <section className="relative min-h-[50vh] flex items-center justify-center text-center overflow-hidden pt-24 pb-10">
+      <section className="relative min-h-[50vh] flex items-center justify-center text-center overflow-hidden pt-36 pb-10">
         <div className="absolute inset-0 bg-gradient-to-b from-main-dark via-main to-main" />
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-10 w-72 h-72 bg-accent rounded-full blur-[120px]" />

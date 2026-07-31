@@ -2,7 +2,8 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 const Footer: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language || "en";
 
   return (
     <footer className="bg-main text-white pt-20 pb-6 border-t-[3px] border-accent relative overflow-hidden" id="contact">
@@ -14,7 +15,11 @@ const Footer: React.FC = () => {
           
           {/* Brand & Bio */}
           <div className="flex flex-col items-center md:items-start text-center md:text-start">
-            <img src="/assets/Photos/Mersal-wide-logo.svg" alt="Mersal Logo" className="w-[140px] mb-6" />
+            <img 
+              src={currentLang === "ar" ? "/assets/Photos/Mersal-ar-wide-logo.svg" : "/assets/Photos/Mersal-wide-logo.svg"} 
+              alt="Mersal Logo" 
+              className="w-[140px] mb-6" 
+            />
             <p className="text-white/70 leading-relaxed text-sm max-w-[300px]">
               {t("footerText")}
             </p>
@@ -27,7 +32,7 @@ const Footer: React.FC = () => {
               Get In Touch
             </h3>
             <a
-              href="mailto:hello@mersal.top"
+              href="mailto:hi@mersal.me"
               target="_blank"
               rel="noreferrer"
               className="group flex items-center gap-3 text-white/80 hover:text-accent transition-colors duration-300 mb-6"
@@ -41,7 +46,7 @@ const Footer: React.FC = () => {
                   style={{ width: "20px", height: "20px" }}
                 />
               </div>
-              <span className="text-lg font-medium tracking-wide">hello@mersal.top</span>
+              <span className="text-lg font-medium tracking-wide">hi@mersal.me</span>
             </a>
           </div>
 

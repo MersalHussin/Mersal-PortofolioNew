@@ -5,11 +5,43 @@ import Projects from "./pages/Projects";
 import Workshops from "./pages/Workshops";
 import Courses from "./pages/Courses";
 import Admin from "./pages/Admin";
+import NotFound from "./pages/NotFound";
 import Navbar from "./components/Navbar";
+import Loader from "./components/Loader";
+import { supabase } from "./lib/supabase";
+import { useState, useEffect } from "react";
 
 function AppContent() {
   const location = useLocation();
   const isHome = location.pathname === "/";
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const initApp = async () => {
+      try {
+        // Wait for Supabase session to initialize
+        await supabase.auth.getSession();
+        
+        // Add a slight delay for smooth transition and logo visibility
+        setTimeout(() => {
+          setLoading(false);
+        }, 1200);
+      } catch (error) {
+        console.error("Error initializing app:", error);
+        setLoading(false);
+      }
+    };
+    initApp();
+  }, []);
+
+  // Scroll to top on route change
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <div className="text-center">
@@ -21,6 +53,7 @@ function AppContent() {
         <Route path="/workshops" element={<Workshops />} />
         <Route path="/courses" element={<Courses />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
