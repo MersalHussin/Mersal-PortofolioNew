@@ -49,7 +49,7 @@ const Home: React.FC = () => {
     <>
       {/* Hero Section */}
       <section
-        className="min-h-[calc(100vh)] pt-8 sm:pt-24 px-5 overflow-hidden flex items-center justify-center bg-cover bg-center bg-no-repeat text-center text-white"
+        className="min-h-[calc(100vh)] bg-main pt-8 sm:pt-24 px-5 overflow-hidden flex items-center justify-center bg-cover bg-center bg-no-repeat text-center text-white"
 style={{
   backgroundImage: "radial-gradient(circle, #082277, #07195200), url('./assets/Photos/HeroBG.svg')",
 }}

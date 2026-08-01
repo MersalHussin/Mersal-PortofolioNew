@@ -25,14 +25,13 @@ function AppContent() {
         // Wait for Supabase session to initialize
         await supabase.auth.getSession();
         
-        // Add a slight delay for smooth transition and logo visibility
-        // Wait a bit longer to allow components to mount and fetch data
+        // Start fade out almost immediately after auth checks
         setTimeout(() => {
           setIsFadingOut(true);
           setTimeout(() => {
             setLoading(false);
           }, 500); // 500ms fade out transition
-        }, 2000); // Reduced to 2s to compensate for the fade out time
+        }, 100); 
       } catch (error) {
         console.error("Error initializing app:", error);
         setLoading(false);
