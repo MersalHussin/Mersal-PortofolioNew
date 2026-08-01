@@ -22,8 +22,9 @@ const resources = {
       downloadCV: "Download CV",
       exploreProjects: "Explore Projects",
       aboutMe: "About Me",
+      contactMe: "Contact Me",
       aboutText:
-        "I'm Mersal, a passionate MERN Stack Developer dedicated to crafting impactful digital experiences. By blending high-performance web development with a strong foundation in Graphic Design and Branding, I strive to deliver solutions that are both technically robust and visually engaging. I pay close attention to every UI/UX detail, ensuring that each project not only functions flawlessly but also truly resonates with its audience. Let's collaborate to build something remarkable.",
+        "I am Mostafa Mersal, a passionate MERN Stack Developer and UI/UX Designer dedicated to crafting impactful digital experiences. By blending high-performance web development with a strong foundation in Graphic Design and Branding, I deliver solutions that are both technically robust and visually engaging. I pay close attention to every UI/UX detail, ensuring that each project not only functions flawlessly but also truly resonates with its audience. Let's collaborate to build something remarkable.",
       services: "Services",
       testimonials: "Testimonials",
       "testimonials-viewAll": "Read All Testimonials",
@@ -195,8 +196,9 @@ const resources = {
       downloadCV: " السيرة الذاتية",
             exploreProjects: "إكتشف المشاريع",
       aboutMe: "من أنا",
+      contactMe: "تواصل معي",
       aboutText:
-        "أنا مرسال، مطور واجهات ويب متكاملة (MERN Stack) شغوف بصناعة تجارب رقمية مميزة. أجمع بين خبرتي في بناء تطبيقات الويب السريعة والفعالة، وبين خلفيتي في تصميم الجرافيك والهويات البصرية، لأقدم حلولاً تجمع بين الأداء التقني العالي والجمال البصري. أهتم بأدق تفاصيل تجربة المستخدم (UI/UX) لضمان خروج كل مشروع بصورة احترافية تترك أثراً إيجابياً وتلبي تطلعاتك. يسعدني دائماً التعاون لتحويل أفكارك إلى واقع ملموس.",
+        "أنا مصطفى مرسال، مطور واجهات ويب متكاملة (MERN Stack) ومصمم UI/UX، شغوف بصناعة تجارب رقمية استثنائية. أجمع بين خبرتي في بناء تطبيقات الويب السريعة والفعالة، وبين خلفيتي القوية في تصميم الجرافيك وبناء الهويات البصرية، لأقدم حلولاً مبتكرة تجمع بين الأداء التقني العالي والتميز البصري. أولي اهتماماً بالغاً بأدق تفاصيل تجربة المستخدم لضمان خروج كل مشروع بصورة احترافية تلبي تطلعاتك وتترك أثراً إيجابياً. يسعدني دائماً التعاون لتحويل رؤيتك وأفكارك إلى واقع ملموس.",
       services: "الخدمات",
       "services-t": "الخدمات",
       testimonials: "آراء أفتخر بها",

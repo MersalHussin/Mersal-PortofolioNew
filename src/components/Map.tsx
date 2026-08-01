@@ -85,7 +85,6 @@ const Map = () => {
                 >
                   <div className="bg-main-dark/95 backdrop-blur-sm border border-accent/30 rounded-xl px-4 py-2 shadow-[0_0_25px_rgba(63,211,87,0.15)]">
                     <div className="flex items-center gap-2">
-                      <span className="text-2xl">{country.flag}</span>
                       <span className="text-white font-bold text-sm">
                         {t(country.nameKey)}
                       </span>
@@ -98,30 +97,6 @@ const Map = () => {
             ))}
           </div>
 
-          {/* Country flags bar below map */}
-          <div className="flex justify-center items-center gap-6 mt-10 flex-wrap">
-            {countries.map((country) => (
-              <div
-                key={country.id}
-                className={`flex items-center gap-2 px-4 py-2 rounded-xl border transition-all duration-300 cursor-pointer ${
-                  hoveredCountry === country.id
-                    ? "bg-accent/10 border-accent/40 scale-105"
-                    : "bg-white/5 border-white/10 hover:border-white/20"
-                }`}
-                onMouseEnter={() => setHoveredCountry(country.id)}
-                onMouseLeave={() => setHoveredCountry(null)}
-              >
-                <span className="text-2xl">{country.flag}</span>
-                <span
-                  className={`font-bold text-sm transition-colors duration-300 ${
-                    hoveredCountry === country.id ? "text-accent" : "text-white/70"
-                  }`}
-                >
-                  {t(country.nameKey)}
-                </span>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>

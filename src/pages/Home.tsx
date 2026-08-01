@@ -133,6 +133,7 @@ style={{
               </div>
 
               <div className="pt-12 flex flex-wrap justify-start max-lg:justify-center gap-6 items-center">
+                {/* 
                 <div
                   className="relative px-8 sm:px-10 py-4 bg-white/5 text-white/40 font-black text-base sm:text-lg rounded-full cursor-not-allowed border border-white/10"
                 >
@@ -143,11 +144,23 @@ style={{
                     </svg>
                   </span>
                   
-                  {/* Soon Badge */}
                   <div className="absolute -top-2 -right-2 bg-accent text-main-dark text-[10px] sm:text-xs px-3 py-1 rounded-full font-black shadow-[0_0_15px_rgba(63,211,87,0.4)] uppercase tracking-wider transform rotate-[15deg]">
                     Soon
                   </div>
                 </div>
+                */}
+
+                <a
+                  href="mailto:hi@mersal.com"
+                  className="group relative px-8 sm:px-10 py-4 bg-white/5 hover:bg-accent text-white hover:text-main-dark font-black text-base sm:text-lg rounded-full border border-white/10 hover:border-accent transition-all duration-300 shadow-[0_0_0_rgba(63,211,87,0)] hover:shadow-[0_0_20px_rgba(63,211,87,0.4)] flex items-center gap-3"
+                >
+                  <span className="relative z-10 flex items-center gap-3">
+                    {t("contactMe")}
+                  </span>
+                  <svg className="w-5 h-5 relative z-10 transition-transform duration-300 group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </a>
                 
                 <a
                   href={cvLink}

@@ -17,6 +17,7 @@ function AppContent() {
   const location = useLocation();
   const isHome = location.pathname === "/";
   const [loading, setLoading] = useState(true);
+  const [isFadingOut, setIsFadingOut] = useState(false);
 
   useEffect(() => {
     const initApp = async () => {
@@ -27,8 +28,11 @@ function AppContent() {
         // Add a slight delay for smooth transition and logo visibility
         // Wait a bit longer to allow components to mount and fetch data
         setTimeout(() => {
-          setLoading(false);
-        }, 2500);
+          setIsFadingOut(true);
+          setTimeout(() => {
+            setLoading(false);
+          }, 500); // 500ms fade out transition
+        }, 2000); // Reduced to 2s to compensate for the fade out time
       } catch (error) {
         console.error("Error initializing app:", error);
         setLoading(false);
@@ -44,8 +48,12 @@ function AppContent() {
 
   return (
     <>
-      {loading && <Loader />}
-      <div className={`text-center transition-opacity duration-1000 ${loading ? 'opacity-0 h-screen overflow-hidden' : 'opacity-100'}`}>
+      {loading && (
+        <div className={`fixed inset-0 z-[9999] transition-opacity duration-500 pointer-events-none ${isFadingOut ? 'opacity-0' : 'opacity-100'}`}>
+          <Loader />
+        </div>
+      )}
+      <div className={`text-center ${loading && !isFadingOut ? 'h-screen overflow-hidden' : ''}`}>
         <Navbar minimal={!isHome} />
         <Routes>
           <Route path="/" element={<Home />} />
